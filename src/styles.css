@@ -1,14 +1,23 @@
-h1 {
-  color: white;
-  background-color: black;
-};
 
-:root {
-  color-scheme: light dark;
-  supported-color-scheme: light dark;
+
+.title {
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
-@media (prefers-color-scheme: dark) {
-  h1 {
-    margin: 5rem;
-  }
+
+.dark {
+  background-color: #111;
+  color: #eee;
 }
+
+.color-blind {
+  background-color: #1111;
+  color: #E66100;
+}
+
+.light-mode {
+  background-color: #eee;
+  color: #111;
+}
+
