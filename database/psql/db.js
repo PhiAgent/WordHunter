@@ -1,6 +1,6 @@
 const {Pool} = require('pg');
 const connectionConfig = require('./config');
-const dictionary = require('../../final');
+const dictionary = require('../../src/utils.js/dictionary');
 
 const pool = new Pool(connectionConfig);
 
@@ -28,7 +28,7 @@ const addWords = dictionary => {
         })
     )
 };
-
+// addWords(dictionary);
 
 /**
    * Gets top-scoring players for particular set of letters
