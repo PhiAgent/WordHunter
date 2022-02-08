@@ -1,10 +1,11 @@
+
 import React, {useContext, useState, createContext} from 'react';
 
 const ThemeContext = createContext();
 
-const ContextProvider = ({children}) => {
+export const ContextProvider = ({children}) => {
 
-  // state
+  // states
   const [lightMode, setLightMode] = useState(true);
   const [colorBlind, setColorBlind] = useState(false);
 
@@ -24,6 +25,8 @@ const ContextProvider = ({children}) => {
   );
 };
 
-const useMode = () => useContext(ThemeContext);
+// Supplies Context values in Consumer Components
+export const useMode = () => useContext(ThemeContext);
 
 export default useMode;
+

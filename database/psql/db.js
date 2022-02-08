@@ -1,6 +1,6 @@
 const {Pool} = require('pg');
 const connectionConfig = require('./config');
-const dictionary = require('../../src/utils.js/dictionary');
+const dictionary = require('../../src/utils/dictionary');
 
 const pool = new Pool(connectionConfig);
 
