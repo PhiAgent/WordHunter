@@ -1,17 +1,16 @@
 
 import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-class App extends React.Component {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-        <h1>
-          Hello {name}
-        </h1>
-      </>
-    );
-  }
+const App = () => {
+
+  return (
+    <>
+      <h1>
+        Hello
+      </h1>
+    </>
+  );
 }
 
 export default App;
