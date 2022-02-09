@@ -39,7 +39,7 @@ const Settings = () => {
           <div className="modal-footer">
             <div>
               <span>
-                  Having fun? You can support by buying me a coffee 🤗
+                  If you're having fun, you can support by buying me a coffee 🤗
               </span>
             </div>
             <div>
@@ -47,6 +47,7 @@ const Settings = () => {
                   href="https://www.buymeacoffee.com/PhiAgent"
                   target="_blank"
                   rel="noreferrer"
+                  className="buymeacoffee"
                 >
                   <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"/>
                   </a>
