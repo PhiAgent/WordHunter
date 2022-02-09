@@ -38,13 +38,13 @@ const Settings = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <div>If you're enjoying this game, you can star this repo on Github</div>
               <div>
                 <a
                   href=""
                   target="_blank"
-                ><i class="bi bi-github"></i>
-                </a>
+                >Open-source code
+                </a>&nbsp;&nbsp;
+                by Prince Addai
               </div>
             </div>
           </div>

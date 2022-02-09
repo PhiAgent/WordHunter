@@ -7,12 +7,10 @@ const Header = () => {
 
 
   return (
-    <header className={`title ${lightMode ? "dark" : ""} ${colorBlind ? "color-blind":""}`}>
+    <header className={`title ${lightMode ? "dark" : ""} ${colorBlind ? "color-blind" : ""}`}>
       <i className="bi bi-question-circle"></i>
       <h1>Word Game</h1>
-      <button onClick={() => changeMode()}>darkmode</button>
-      <Settings/>
-      <button onClick={() => changeColorBlind()}>colorBlind</button>
+      <Settings />
     </header>
   )
 };
