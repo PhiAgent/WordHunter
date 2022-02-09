@@ -1,7 +1,7 @@
 
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Header from "./components/Header";
+import Header from "./components/Title/Header";
 import { ContextProvider } from "./context/GameContext";
 
 const App = () => {

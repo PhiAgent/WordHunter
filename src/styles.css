@@ -1,23 +1,73 @@
+/* css custom properties */
 
+:root {
+  --main-background: #A6A297;
+  --secondary-background: #F2F2F2;
+  --primary: #F2E635;
+  --secondary: #A69D1F;
+  --secondary-alt: #A68F1F;
+  --font-size: 1.3rem;
+  --font-text: Libre Baskerville;
+  --font-title: Roboto;
+  --black: #000000;
+  --white: #FFFFFF;
+  --hotmag: #ff17e4;
+  --aqua: #00FFFF;
+  --plum: #673147;
+}
 
 .title {
   display: flex;
+  justify-content: space-around;
+  font-family: var(--font-title);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-body, .modal-footer {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: white;
+}
+
+i {
+  cursor: pointer;
+  font-size: 26px !important;
+}
+
+i.settings {
+  cursor: pointer;
+  font-size: 40px !important;
+}
+
+.settings span {
+  font-size: 0.9rem;
+}
+
+/* .toggleButtonsDark span {
+  vertical-align: middle;
+} */
+
+
+.toggleButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .dark {
-  background-color: #111;
-  color: #eee;
+  background-color: #1f1c0a;
+  color: #eeede7;
 }
 
 .color-blind {
-  background-color: #1111;
   color: #E66100;
 }
 
 .light-mode {
   background-color: #eee;
-  color: #111;
+  color: #eeede7;
 }
-
