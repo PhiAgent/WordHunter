@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import useMode from '../../context/GameContext';
+import Help from './Help';
 import Settings from './Settings';
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
 
   return (
     <header className={`title ${lightMode ? "dark" : ""} ${colorBlind ? "color-blind" : ""}`}>
-      <i className="bi bi-question-circle"></i>
+      <Help/>
       <h1>Word Game</h1>
       <Settings />
     </header>
@@ -16,3 +17,6 @@ const Header = () => {
 };
 
 export default Header;
+
+// color blind is for changing only green to
+// orange
