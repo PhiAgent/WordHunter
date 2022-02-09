@@ -47,9 +47,10 @@ const Settings = () => {
                   href="https://www.buymeacoffee.com/PhiAgent"
                   target="_blank"
                   rel="noreferrer"
-                  className="buymeacoffee"
                 >
-                  <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"/>
+                  <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee"
+                    className="buymeacoffee"
+                  height="41" width="174"/>
                   </a>
             </div>
           </div>

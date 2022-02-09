@@ -5,13 +5,19 @@ const ThemeContext = createContext();
 
 export const ContextProvider = ({children}) => {
 
-  // states
+  // States
   const [lightMode, setLightMode] = useState(true);
   const [colorBlind, setColorBlind] = useState(false);
 
-  // context methods
-  const changeMode = () => setLightMode(!lightMode);
-  const changeColorBlind = () => setColorBlind(!colorBlind);
+  // Centralized Dark Mode Switch
+  const changeMode = () => {
+    document.body.classList[lightMode ? 'remove' : 'add']('dark');
+    setLightMode(!lightMode);
+  }
+  const changeColorBlind = () => {
+    document.body.classList[colorBlind ? 'add' : 'remove']('color-blind');
+    setColorBlind(!colorBlind);
+  }
 
   return(
     <ThemeContext.Provider value={{
