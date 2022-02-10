@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import useMode from '../../context/GameContext';
 import { scoreSheet } from '../../utils/scoreGenerator';
 
-const initialValues = {
-  username: '',
-}
 
 const Login = () => {
 
   const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
+
+
   const [input, setInput] = useState('');
   const [errors, setErrors] = useState('');
 
@@ -19,19 +18,24 @@ const Login = () => {
   // Validates username
   const validate = () => {
     let noSpace = /^\S+$/g;
-    if(input.length < 6) {
+
+    if(input.length < 6) {//Too short
       setErrors('Username must be at least 6 characters');
       return false;
-    } else if (input.length > 23) {
+
+    } else if (input.length > 23) {//Too Long
       setErrors('Username must be at most 23 characters');
       return false;
-    } else if (!(input[0].toUpperCase() in scoreSheet)) {
+
+    } else if (!(input[0].toUpperCase() in scoreSheet)) {//Does not start with letter
       setErrors('Username must start with letter');
       return false;
-    } else if (!username) {
+
+    } else if (!username) {//Nothing entered
       setErrors('Username must be at least 6 characters');
       return false;
-    } else if (!noSpace.test(input)) {
+
+    } else if (!noSpace.test(input)) {//Has spaces
       setErrors('Username must have no space');
       return false;
     }
