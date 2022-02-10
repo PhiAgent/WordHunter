@@ -9,13 +9,13 @@ export const ContextProvider = ({children}) => {
   const [lightMode, setLightMode] = useState(true);
   const [colorBlind, setColorBlind] = useState(false);
 
-  // Centralized Dark Mode Switch
+  // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
-    document.body.classList[lightMode ? 'remove' : 'add']('dark');
+    document.body.classList[lightMode ? 'add' : 'remove']('dark');
     setLightMode(!lightMode);
   }
   const changeColorBlind = () => {
-    document.body.classList[colorBlind ? 'add' : 'remove']('color-blind');
+    document.body.classList[colorBlind ? 'remove' : 'add']('color-blind');
     setColorBlind(!colorBlind);
   }
 

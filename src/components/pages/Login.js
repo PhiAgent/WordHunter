@@ -9,10 +9,10 @@ const Login = () => {
   const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
 
   return (
-    <div className={`container ${lightMode ? "dark" : ""} ${colorBlind ? "color-blind" : ""}`}>
-      <div>
-        <form>
-          <div className="form-group">
+    <div className="container">
+      <div className="login">
+        <form className="form-group">
+          <div className="form-content">
             <input
               type="text"
               className="form-control username"

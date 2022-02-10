@@ -10,7 +10,7 @@ const Help = () => {
       </i>
       <div className="modal fade" id="helpModal" tabIndex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
         <div className="modal-dialog">
-          <div className={`modal-content ${lightMode ? "dark" : ""} ${colorBlind ? "color-blind" : ""}`}>
+          <div className={`modal-content ${lightMode ? "" : "dark"}`}>
         <div className="modal-header">
           <div></div>
           <div>

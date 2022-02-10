@@ -8,7 +8,7 @@ const Header = () => {
 
 
   return (
-    <header className={`title ${lightMode ? "dark" : ""} ${colorBlind ? "color-blind" : ""}`}>
+    <header className="title">
       <Help/>
       <h1>Word Game</h1>
       <Settings />
