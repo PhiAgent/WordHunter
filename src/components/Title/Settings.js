@@ -21,12 +21,10 @@ const Settings = () => {
             ></i></div>
           </div>
           <div className="modal-body">
-            <div className="toggleButtons Dark">
-              <span>&nbsp;&nbsp;&nbsp;Dark Mode</span>
+              <div className="toggleButtons Dark">Dark Mode&nbsp;&nbsp;&nbsp;
                 <i className={`${lightMode ? "bi bi-toggle-off settings" : "bi  bi-toggle-on settings"}`} onClick={changeMode}></i>
             </div>
-            <div className="toggleButtons ColorBlind">
-              <span>&nbsp;&nbsp;&nbsp;Color Blind Mode</span>
+              <div className="toggleButtons ColorBlind">Color Blind Mode&nbsp;&nbsp;&nbsp;
                 <i className={`${colorBlind ? "bi bi-toggle-on settings" : "bi  bi-toggle-off settings"}`} onClick={changeColorBlind}></i>
             </div>
           </div>

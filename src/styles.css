@@ -68,6 +68,7 @@ body {
   -moz-transition: all .5s;
   -webkit-transition: all .5s;
     transition: all .5s;
+
 }
 
 .modal-header {
@@ -75,13 +76,23 @@ body {
   justify-content: space-between;
   font-family: var(--font-title);
   /* border-bottom: #000000; */
+  border: none;
 }
 
-.modal-body, .modal-footer {
+.modal-body, .modal-footer, .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   font-family: var(--font-text);
+  border: none;
+}
+
+.Dark {
+  border-top: 1px solid gray;
+}
+
+.ColorBlind {
+  border-bottom: 1px solid gray;
 }
 
 h1 {
@@ -188,4 +199,37 @@ i.settings {
 
 a:hover {
   text-decoration: none;
+}
+
+.score-board, .score-content {
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.score, .words {
+  margin: 6px;
+  border-radius: 10px;
+  width:150px;
+  height: 100px;
+  padding: 2%;
+  font-family: var(--font-text);
+  position: relative;
+  /* color: black; */
+}
+
+.words {
+  background-color: #f97403;
+}
+
+.score {
+  background-color: green;
+}
+
+.count {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  font-size: 3rem;
+  font-weight: 500;
 }

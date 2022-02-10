@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
-import useMode from '../../context/GameContext';
+import useMode from '../../../context/GameContext';
 
 const ScoreBoard = () => {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(2400);
 
   return (
-    <div>
+    <div className="score-board">
+      <div></div>
+      <div className="score-content">
       <div className="words">
-        <small className="wordsTitle"></small>
-        <p className="count"></p>
+        <small className="words-title">Words</small>
+          <div className="count">{score}</div>
       </div>
-      <div className="score">
-        <small className="scoreTitle"></small>
-        <p className="count"></p>
+      <div className="score green">
+        <small className="score-title">Score</small>
+          <div className="count">{score}</div>
       </div>
+      </div>
+      <div></div>
     </div>
   )
-}
+};
 
 export default ScoreBoard;
