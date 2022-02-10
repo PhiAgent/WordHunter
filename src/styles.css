@@ -60,6 +60,7 @@ body {
   align-items: center;
   font-family: var(--font-title);
   padding: 0 1%;
+  border-bottom: 1px solid;
 }
 
 .modal-content, img {
@@ -201,6 +202,14 @@ a:hover {
   text-decoration: none;
 }
 
+
+/* Board */
+
+.board, .game {
+  margin-top: 20px;
+}
+
+/* Scoreboard */
 .score-board, .score-content {
   display:flex;
   justify-content: space-around;
@@ -222,8 +231,20 @@ a:hover {
   background-color: #f97403;
 }
 
+.words:hover {
+  background-color: #fdaa63;
+}
+
 .score {
   background-color: green;
+}
+
+.score-title, .words-title {
+  font-family: libre baskerville;
+}
+
+.score:hover {
+  background-color: yellowgreen;
 }
 
 .count {
@@ -232,4 +253,37 @@ a:hover {
   right: 10%;
   font-size: 3rem;
   font-weight: 500;
+}
+
+/* Guessed Word */
+
+.guessed-word {
+  list-style: none;
+  display: flex;
+  width: auto;
+  padding: 0;
+}
+
+.guessed-letter {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  background-color: #ccf3f2;
+  border-radius: 5px;
+  margin-left: 1%;
+  color: #000000;
+}
+
+.guessed-letter:hover {
+  background-color: #b2d4dd;
+}
+
+.word-display {
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
 }
