@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   padding: 4px;
   transform: translate(-50%, -50%);
-  width: 50%;
+  width: 60%;
   height: auto;
   align-items: center;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2),0 7px 20px 0 rgba(0, 0, 0, 0.17);
@@ -43,8 +43,8 @@ body {
 
 .login .form-group {
   margin: 1px;
-  width: 90%;
-  height: 100px;
+  width: 93%;
+  height: auto;
 }
 
 .title {
@@ -100,7 +100,7 @@ h1 {
 
 .form-control {
   padding: 6px 6px 6px 6px;
-  margin-top: 16px
+  margin-top: 8px
 }
 
 .form-content {
@@ -113,6 +113,10 @@ h1 {
 .form-text {
   font-size: 0.7em;
   margin-top: 1px;
+}
+
+.inputHelper {
+  width: 100%;
 }
 
 div i {
@@ -140,7 +144,24 @@ i.settings {
   justify-content: space-between;
 }
 
-.dark {
+.btn-primary, .dark .btn-primary:focus {
+  background-color: #eeede7;;
+  color:#1f1c0a;
+  border: 0;
+  margin-bottom: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #1f1c0a;
+  color: #eeede7;
+}
+
+.dark .btn-primary:hover {
+  background-color: #eeede7;
+  color:#1f1c0a;
+}
+
+.dark, .dark .btn-primary, .btn-primary:focus {
   background-color: #1f1c0a;
   color: #eeede7;
 }
@@ -148,6 +169,10 @@ i.settings {
 /* add specificity to color blind by adding additional tags for the selected elements */
 .color-blind :is(i) {
   color: #E66100;
+}
+
+.errors {
+  color: red !important;
 }
 
 a:hover {

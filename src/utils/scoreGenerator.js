@@ -46,4 +46,4 @@ const findScore = word => {
   return score + bonus;
 };
 
-module.exports = findScore;
+module.exports = {findScore, scoreSheet};
