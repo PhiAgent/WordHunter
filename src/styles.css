@@ -69,7 +69,6 @@ body {
   -moz-transition: all .5s;
   -webkit-transition: all .5s;
     transition: all .5s;
-
 }
 
 .modal-header {
@@ -77,23 +76,21 @@ body {
   justify-content: space-between;
   font-family: var(--font-title);
   /* border-bottom: #000000; */
-  border: none;
 }
 
-.modal-body, .modal-footer, .container {
+.modal-body, .modal-footer, .container, .puzzle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-family: var(--font-text);
-  border: none;
 }
 
 .Dark {
-  border-top: 1px solid gray;
+  /* border-top: 1px solid gray; */
 }
 
 .ColorBlind {
-  border-bottom: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
 }
 
 h1 {
@@ -262,6 +259,7 @@ a:hover {
   display: flex;
   width: auto;
   padding: 0;
+  height: 50px;
 }
 
 .guessed-letter {
@@ -282,8 +280,35 @@ a:hover {
   background-color: #b2d4dd;
 }
 
-.word-display {
+.word-display, .buttonRow {
   display:flex;
   justify-content: space-around;
   flex-direction: row;
+}
+
+.puzzle-board {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  width: 300px;
+  padding: 0;
+  margin-top: 0;
+}
+
+.tile {
+  width: 90px;
+  height: 90px;
+  border: 5px solid;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  font-size: 80px;
+  color:#000000;
 }

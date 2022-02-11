@@ -8,6 +8,9 @@ export const ContextProvider = ({children}) => {
   // States
   const [lightMode, setLightMode] = useState(true);
   const [colorBlind, setColorBlind] = useState(false);
+  const [score, setScore] = useState(0);
+  const [enteredWords, setEnteredWords] = useState([]);
+  const [current, setCurrent] = useState('');
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
@@ -24,7 +27,13 @@ export const ContextProvider = ({children}) => {
       lightMode,
       changeMode,
       colorBlind,
-      changeColorBlind
+      changeColorBlind,
+      setScore,
+      score,
+      enteredWords,
+      setEnteredWords,
+      current,
+      setCurrent
     }}>
       {children}
     </ThemeContext.Provider>

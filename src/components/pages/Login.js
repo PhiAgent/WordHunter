@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import useMode from '../../context/GameContext';
-import { scoreSheet } from '../../utils/scoreGenerator';
-
+import {scoreSheet} from '../../utils/scoreGenerator';
 
 const Login = () => {
 
@@ -42,7 +41,7 @@ const Login = () => {
 
     setErrors('');
     return true;
-  }
+  };
 
   //Set helper messages
   const helperText = () => errors ? errors : `It does not have to be your email`

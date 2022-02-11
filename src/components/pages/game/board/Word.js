@@ -1,14 +1,15 @@
 import React, {useState} from "react";
+import useMode from "../../../../context/GameContext";
 
 const Word = () => {
-  const [word, setWord] = useState('testifies');
+  const {current} = useMode();
 
   return (
     <div className="word-display">
       <div></div>
       <ul className='guessed-word'>
         {
-          word.toUpperCase().split('').map((letter, i) =>
+          current.toUpperCase().split('').map((letter, i) =>
             <li key={`letter${i}`}className="guessed-letter">{letter}</li>
           )
         }

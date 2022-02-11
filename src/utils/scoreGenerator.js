@@ -1,3 +1,4 @@
+const candidates = require('./dictionary');
 
 const scoreSheet = {
   A: 6,
@@ -46,4 +47,46 @@ const findScore = word => {
   return score + bonus;
 };
 
-module.exports = {findScore, scoreSheet};
+const shuffle = str => {
+  let arr = str.split('');
+  let currentIndex = arr.length - 1, randomIndex;
+
+  while (currentIndex >= 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+    currentIndex -= 1;
+  }
+
+  return arr.join('');
+};
+
+const words = [
+  'ambiences', 'amazement', 'abolishes', 'appliance', 'boomerang',
+  'brokerage', 'budgetary', 'beverages', 'comebacks', 'chimaeras',
+  'cedarwood', 'correlate', 'douchebag', 'diplomats', 'donations',
+  'devaluing', 'expanding', 'evaluator', 'entourage', 'encourage',
+  'floorings', 'filenames', 'firewalls', 'foretaste', 'generates',
+  'gentleman', 'graduates', 'gameshows', 'homepages', 'hermitage',
+  'housemate', 'hampering', 'itinerary', 'impetuses', 'immatures',
+  'ignorance', 'jalapenos', 'juveniles', 'jackboots', 'junctures',
+  'kingmaker', 'kerosenes', 'appeasing', 'averaging', 'labouring',
+  'loitering', 'loosening', 'lifesaver', 'middleman', 'mercenary',
+  'metaphase', 'maddening', 'numerates', 'negations', 'nursemaid',
+  'nefarious', 'operating', 'operation', 'overpedal', 'operators',
+  'pregaming', 'pilferage', 'premature', 'probingly', 'quiltings',
+  'quietudes', 'repulsive', 'regularly', 'reduction', 'remarking',
+  'stumbling', 'shoelaces', 'stonewall', 'scenarios', 'trademark',
+  'tenacious', 'tempering', 'threading', 'utterance', 'underages',
+  'unrelated', 'untenable', 'verandahs', 'venerator', 'venturing',
+  'veeringly', 'wingbeats', 'whistling', 'wondering', 'winemaker',
+  'xanthones', 'xenograft', 'juxtapose', 'complexes', 'yellowing',
+  'yeastlike', 'yesterday', 'yoghourts', 'zestfully', 'zoophytes', 'humanized', 'apoenzyme'
+];
+
+const getRandomWord = () => {
+  let count = [];
+  randomIndex = Math.floor(Math.random() * words.length)
+  return words[randomIndex];
+}
+
+module.exports = { findScore, scoreSheet, shuffle, getRandomWord};

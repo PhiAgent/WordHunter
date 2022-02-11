@@ -1,12 +1,12 @@
 import React from "react";
+import Puzzle from "./Puzzle";
 import Word from "./Word";
 
 const Board = () => {
 
   return (
     <div className="board">
-      <Word />
-      {/* <Board/> */}
+      <Puzzle/>
     </div>
   )
 };

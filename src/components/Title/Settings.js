@@ -31,7 +31,7 @@ const Settings = () => {
           <div className="modal-footer">
             <div>
               <span>
-                  If you're having fun, you can support by buying me a coffee 🤗
+                  If you're having fun, you can support by buying me coffee 🤗
               </span>
             </div>
             <div>
