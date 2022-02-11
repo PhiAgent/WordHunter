@@ -10,19 +10,27 @@ const Tile = ({ letter, current, clear, clearBoard, setCurrent  }) => {
     }
   }, [bgColor, clear]);
 
+  //Change tile color on click
   const handleClick = e => {
+
+    // Select letter
     if (bgColor === 'white' || bgColor === '#ADD8E6') {
       setBgColor('#0275d8');
       setCurrent(current + letter);
-    } else if (bgColor === '#0275d8' && current.slice(-1) === letter) {
+    }
+    // Allow user to go back
+    else if (bgColor === '#0275d8' && current.slice(-1) === letter) {
       setBgColor('white');
       setCurrent(current.slice(0, -1))
     }
   }
 
+  // Change tile color on hover
   const handleMouseEnter = () => {
     if (bgColor === 'white') setBgColor('#ADD8E6');
   }
+
+  // Revert to white after mouse leaves
   const handleMouseLeave = () => {
     if (bgColor === '#ADD8E6') setBgColor('white')
   }
