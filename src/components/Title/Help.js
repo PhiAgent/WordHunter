@@ -22,8 +22,7 @@ const Help = () => {
         </div>
         <div className="modal-body">
           <ul>
-              <li className="mb-2">You have 2 minutes to guess as many words as you can.</li>
-              <li className="mb-2">Enter submit to submit the word.</li>
+              <li className="mb-2">Guess as many 3 or more letter words as you can.</li>
               <li className="mb-2">The longer the word, the more points you get.</li>
               <li className="mb-2">Watch out, there's always a 9 letter word!</li>
           </ul>

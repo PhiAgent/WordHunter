@@ -202,7 +202,7 @@ a:hover {
 
 /* Board */
 
-.board, .game {
+.game {
   margin-top: 20px;
 }
 
@@ -260,6 +260,8 @@ a:hover {
   width: auto;
   padding: 0;
   height: 50px;
+  margin-bottom: 11px;
+  margin-top: 5px;
 }
 
 .guessed-letter {
@@ -280,7 +282,7 @@ a:hover {
   background-color: #b2d4dd;
 }
 
-.word-display, .buttonRow {
+.word-display, .buttonRow, .timerRow {
   display:flex;
   justify-content: space-around;
   flex-direction: row;

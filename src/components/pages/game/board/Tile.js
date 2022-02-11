@@ -21,7 +21,7 @@ const Tile = ({ letter, current, clear, clearBoard, setCurrent  }) => {
     // Allow user to go back
     else if (bgColor === '#0275d8' && current.slice(-1) === letter) {
       setBgColor('white');
-      setCurrent(current.slice(0, -1))
+      setCurrent(current.slice(0, -1));
     }
   }
 

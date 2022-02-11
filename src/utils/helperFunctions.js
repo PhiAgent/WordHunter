@@ -22,4 +22,12 @@ const getRandomWord = () => {
   return words[randomIndex];
 }
 
-module.exports = {shuffle, getRandomWord};
+// Converts seconds into minutes
+const secondsToMinutes = seconds => {
+  if (typeof seconds === 'string') return seconds;
+  const minutes = seconds > 60 ? Math.floor(seconds / 60) : 0;
+  const secs = seconds - 60 * minutes;
+  return `${minutes}:${secs > 9 ? secs : `0${secs}`}`;
+}
+
+module.exports = { shuffle, getRandomWord, secondsToMinutes};

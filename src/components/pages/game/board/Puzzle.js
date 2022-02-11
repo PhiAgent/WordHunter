@@ -5,15 +5,17 @@ import Tile from './Tile';
 import candidates from '../../../../utils/dictionary';
 import useMode from '../../../../context/GameContext';
 import Word from './Word';
+import Timer from './Timer';
 
 const Puzzle = () => {
 
   // States
-  const [unScrambled, setUnScrambled] = useState(getRandomWord())
+  const [unScrambled, setUnScrambled] = useState(getRandomWord());
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
   const [timeLeft, setTime] = useState(120);
   const { score, setScore, enteredWords, setEnteredWords, current, setCurrent} = useMode();
+  const [gameOver, setGameOver] = useState(false);
 
   // Check if word is valid
   const checkWord = e => {
@@ -48,14 +50,25 @@ const Puzzle = () => {
   };
 
   return (
-    <div className="puzzle">
+    <div
+      className="puzzle"
+    >
       <Word/>
-      <div className='buttonRow'>
+      <div
+        className='buttonRow'
+      >
         <div></div>
-      <button className="btn btn-primary" onClick={checkWord}>Submit</button>
+      <button
+        className="btn btn-primary"
+        onClick={checkWord}
+      >
+        Submit
+      </button>
         <div></div>
       </div>
-      <ul className='puzzle-board'>
+      <ul
+        className='puzzle-board'
+      >
         {
           word.toUpperCase().split('').map((letter, i) =>
           <Tile
@@ -69,6 +82,19 @@ const Puzzle = () => {
           )
         }
       </ul>
+      <div
+        className='timerRow'
+      >
+        <div></div>
+        <Timer
+          clear={clear}
+          clearBoard={clearBoard}
+          setGameOver={setGameOver}
+          setTime={setTime}
+          timeLeft={timeLeft}
+        />
+        <div></div>
+      </div>
     </div>
   )
 };
