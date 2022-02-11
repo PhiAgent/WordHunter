@@ -37,13 +37,14 @@ const Puzzle = () => {
     clearBoard(true);
   };
 
-  // useEffect(() => {
-  //   setCurrent('');
-  //   setScore(0);
-  //   setEnteredWords([]);
-  //   clearBoard(true);
-  //   setTime(120);
-  // }, [word]);
+  useEffect(() => {
+    setCurrent('');
+    setScore(0);
+    setEnteredWords([]);
+    clearBoard(true);
+    setTime(120);
+    setWord(shuffle(unScrambled));
+  }, [unScrambled]);
 
   const reset = () => {
     setUnScrambled(getRandomWord());
@@ -93,6 +94,28 @@ const Puzzle = () => {
           setTime={setTime}
           timeLeft={timeLeft}
         />
+        <div></div>
+      </div>
+      <div className='stopGameRow'>
+        <div></div>
+        <div className="stopButtons">
+          <div>
+            <button
+            className="btn btn-primary endGame"
+          // onClick={checkWord}
+            >
+              EndGame
+            </button>
+          </div>
+          <div>
+            <button
+              className="btn btn-primary reset"
+              onClick={reset}
+            >
+              Reset
+            </button>
+          </div>
+        </div>
         <div></div>
       </div>
     </div>

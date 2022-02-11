@@ -24,7 +24,7 @@ const getRandomWord = () => {
 
 // Converts seconds into minutes
 const secondsToMinutes = seconds => {
-  if (typeof seconds === 'string') return seconds;
+  if (!seconds || typeof seconds === 'string') return '0:00';
   const minutes = seconds > 60 ? Math.floor(seconds / 60) : 0;
   const secs = seconds - 60 * minutes;
   return `${minutes}:${secs > 9 ? secs : `0${secs}`}`;

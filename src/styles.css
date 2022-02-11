@@ -158,7 +158,7 @@ i.settings {
   font-size: 0.9rem;
 }
 
-.toggleButtons {
+.toggleButtons, .timerDisplay {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -169,6 +169,10 @@ i.settings {
   color:#1f1c0a;
   border: 0;
   margin-bottom: 8px;
+}
+
+.btn-primary {
+  border: solid 1px;
 }
 
 .btn-primary:hover {
@@ -282,7 +286,7 @@ a:hover {
   background-color: #b2d4dd;
 }
 
-.word-display, .buttonRow, .timerRow {
+.word-display, .buttonRow, .timerRow, .stopGameRow {
   display:flex;
   justify-content: space-around;
   flex-direction: row;
@@ -302,7 +306,7 @@ a:hover {
 .tile {
   width: 90px;
   height: 90px;
-  border: 5px solid;
+  border: 3px solid;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -314,3 +318,33 @@ a:hover {
   font-size: 80px;
   color:#000000;
 }
+
+.timerDisplay .timer {
+  vertical-align: text-top;
+}
+
+.timerDisplay {
+  border-radius: 5px;
+  /* border: 1px solid; */
+  position: relative;
+}
+
+.timerDisplay h3 {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+}
+
+.timerRow {
+  margin-top: 8px;
+}
+
+.stopButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* .endGame {
+  margin-right: 10px;
+} */
