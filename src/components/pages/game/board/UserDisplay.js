@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import useMode from "../../../../context/GameContext";
 
-const Word = () => {
+const UserDisplay = () => {
   const {current} = useMode();
 
   return (
@@ -19,4 +19,4 @@ const Word = () => {
   )
 };
 
-export default Word;
+export default UserDisplay;

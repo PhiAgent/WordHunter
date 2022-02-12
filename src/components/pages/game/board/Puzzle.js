@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { getRandomWord, shuffle } from '../../../../utils/helperFunctions';
+import { getRandomWord, shuffle, continousTense } from '../../../../utils/helperFunctions';
 import {findScore} from '../../../../utils/scoreGenerator'
 import Tile from './Tile';
 import candidates from '../../../../utils/dictionary';
 import useMode from '../../../../context/GameContext';
-import Word from './Word';
+import UserDisplay from './UserDisplay';
 import Timer from './Timer';
 import axios from 'axios';
 import url from '../../../../../server/url';
+
+const timer = 120;
 
 const Puzzle = () => {
 
@@ -15,7 +17,7 @@ const Puzzle = () => {
   const [unScrambled, setUnScrambled] = useState(getRandomWord());
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
-  const [timeLeft, setTime] = useState(10);
+  const [timeLeft, setTime] = useState(timer);
   const {
           score,
           setScore,
@@ -33,14 +35,25 @@ const Puzzle = () => {
     let letters = current.toLowerCase();
 
     if(letters) {
+      let className, message;
       if(letters in enteredWords) {
         //transitions of already entered
-      } else if (letters in candidates[unScrambled]) {
+        className = 'warning';
+        message = `Already tried that`;
+      } else if ((letters in candidates[unScrambled]) || continousTense(unScrambled, letters)) {
         let points = findScore(letters);
         setScore(score + points);
         setEnteredWords([letters, ...enteredWords]);
+        message = `Great Job! +${points}`;
+        className = 'success';
+      } else if(letters.length < 3) {
+        // transitions of tooShort
+        message = 'Too short';
+        className = 'danger';
       } else {
-        // transitions of invalid word
+        // transitions for invalid
+        message = 'Not valid';
+        className = 'danger';
       }
     }
     setCurrent('');
@@ -62,7 +75,7 @@ const Puzzle = () => {
     setScore(0);
     setEnteredWords([]);
     clearBoard(true);
-    setTime(10);
+    setTime(timer);
     setWord(shuffle(unScrambled));
     setGameOver(false);
 
@@ -77,7 +90,7 @@ const Puzzle = () => {
     <div
       className="puzzle"
     >
-      <Word/>
+      <UserDisplay/>
       <div
         className='buttonRow'
       >

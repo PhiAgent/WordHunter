@@ -1,4 +1,5 @@
 const words =  require('./words');
+const candidates = require('./dictionary');
 
 
 // Shuffles a given set of letters
@@ -32,6 +33,7 @@ const secondsToMinutes = seconds => {
 
 // Checks if user has made it into top 10
 const updateLeaders = (leaders, score, username) => {//It's important that leaders are sorted by score
+  if(!score) return false;
 
   let oldScore, userIndex;
   const userIsLeader = leaders.some((leader, i) => {
@@ -51,7 +53,7 @@ const updateLeaders = (leaders, score, username) => {//It's important that leade
       return false;
     }
   } else {
-    if (leaders.length < 3) {//add user
+    if (leaders.length < 10) {//add user
       leaders.push({ username, score });
       return true;
     } else {
@@ -67,4 +69,10 @@ const updateLeaders = (leaders, score, username) => {//It's important that leade
   }
 };
 
-module.exports = { shuffle, getRandomWord, secondsToMinutes, updateLeaders};
+const continousTense = (parentStr, str) => {
+  const isContinuous = str.slice(-3) === 'ing';
+
+  return isContinuous && (str.slice(0, -3) in candidates[parentStr]);
+}
+
+module.exports = { shuffle, getRandomWord, secondsToMinutes, updateLeaders, continousTense};

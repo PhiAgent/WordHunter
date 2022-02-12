@@ -1,6 +1,6 @@
 import React from "react";
 import Puzzle from "./Puzzle";
-import Word from "./Word";
+
 
 const Board = () => {
 
