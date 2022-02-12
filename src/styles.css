@@ -258,7 +258,7 @@ a:hover {
 
 /* Guessed Word */
 
-.guessed-word {
+.guessed-word, .inputInfo {
   list-style: none;
   display: flex;
   width: auto;
@@ -350,3 +350,9 @@ a:hover {
   margin-right: 10px;
 } */
 
+.inputInfo {
+ width: fit-content;
+ font-size: 1.125rem;
+ padding: 0.25rem 1rem;
+ border-radius: 20rem;
+}

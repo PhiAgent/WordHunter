@@ -18,6 +18,9 @@ const Puzzle = () => {
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
   const [timeLeft, setTime] = useState(timer);
+  const [popUpClass, setPopClass] = useState('');
+  const [message, setMessage] = useState('');
+  const [infoDisplay, setInfoDisplay] = useState(false);
   const {
           score,
           setScore,
@@ -35,27 +38,28 @@ const Puzzle = () => {
     let letters = current.toLowerCase();
 
     if(letters) {
-      let className, message;
-      if(letters in enteredWords) {
+      if(enteredWords.includes(letters)) {
         //transitions of already entered
-        className = 'warning';
-        message = `Already tried that`;
+        setPopClass('warning');
+        setMessage(`Already tried that`);
       } else if ((letters in candidates[unScrambled]) || continousTense(unScrambled, letters)) {
         let points = findScore(letters);
         setScore(score + points);
         setEnteredWords([letters, ...enteredWords]);
-        message = `Great Job! +${points}`;
-        className = 'success';
+        setMessage(`Great Job! +${points}`);
+        setPopClass('success');
       } else if(letters.length < 3) {
         // transitions of tooShort
-        message = 'Too short';
-        className = 'danger';
+        setMessage('Too short');
+        setPopClass('danger');
       } else {
         // transitions for invalid
-        message = 'Not valid';
-        className = 'danger';
+        setMessage('Not valid');
+        setPopClass('danger');
       }
     }
+    setInfoDisplay(true);
+    // const timer = setTimeout(() => setInfoDisplay(false), 1500);
     setCurrent('');
     clearBoard(true);
   };
@@ -90,7 +94,7 @@ const Puzzle = () => {
     <div
       className="puzzle"
     >
-      <UserDisplay/>
+      <UserDisplay popUpClass={popUpClass} message={message} infoDisplay={infoDisplay}/>
       <div
         className='buttonRow'
       >
