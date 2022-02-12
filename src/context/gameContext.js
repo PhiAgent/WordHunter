@@ -12,6 +12,7 @@ export const ContextProvider = ({children}) => {
   const [enteredWords, setEnteredWords] = useState([]);
   const [current, setCurrent] = useState('');
   const [leaders, setLeaders] = useState([]);
+  const [currentPlayer, setPlayer] = useState('PhiAgent');
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
@@ -37,7 +38,9 @@ export const ContextProvider = ({children}) => {
       current,
       setCurrent,
       setLeaders,
-      leaders
+      leaders,
+      currentPlayer,
+      setPlayer
     }}>
       {children}
     </ThemeContext.Provider>

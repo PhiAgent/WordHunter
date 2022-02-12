@@ -26,9 +26,10 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.get('/leaders', (req, res) => {
   let word = req.query.word;
   const cb = (err, leaders) =>
-                err ?
-                res.status(400).send(err) :
-                res.status(200).send(leaders);
+              err ?
+              res.status(400).send(err) :
+              res.status(200).send(leaders);
+
   word && getLeaders(word, cb);
 });
 
@@ -39,7 +40,9 @@ app.post('/leaders', (req, res) => {
       score = req.body.score;
 
   const cb = (err, leaders) =>
-              err ? res.status(400) : res.status(200);
+              err ?
+              res.status(400) :
+              res.status(200);
 
   word && username && score && updateScore(word, username, score, cb);
 });

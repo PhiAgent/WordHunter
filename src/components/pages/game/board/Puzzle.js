@@ -15,7 +15,7 @@ const Puzzle = () => {
   const [unScrambled, setUnScrambled] = useState(getRandomWord());
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
-  const [timeLeft, setTime] = useState(120);
+  const [timeLeft, setTime] = useState(10);
   const {
           score,
           setScore,
@@ -62,8 +62,9 @@ const Puzzle = () => {
     setScore(0);
     setEnteredWords([]);
     clearBoard(true);
-    setTime(120);
+    setTime(10);
     setWord(shuffle(unScrambled));
+    setGameOver(false);
 
     return () => latest = false;
   }, [unScrambled]);

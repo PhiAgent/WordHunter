@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { secondsToMinutes } from '../../../../utils/helperFunctions';
+import { secondsToMinutes, updateLeaders } from '../../../../utils/helperFunctions';
 import useMode from '../../../../context/GameContext';
 import axios from 'axios';
 const url = require('../../../../../server/url');
@@ -8,7 +8,7 @@ const url = require('../../../../../server/url');
 const Timer = ({ setGameOver, setTime, timeLeft, clear, clearBoard, unScrambled }) => {
 
   const [count, setCount] = useState(-1);
-  const {score} = useMode();
+  const { score, leaders, setLeaders, currentPlayer} = useMode();
 
   useEffect(() => {
     let timeOut, latest = true;
@@ -18,14 +18,19 @@ const Timer = ({ setGameOver, setTime, timeLeft, clear, clearBoard, unScrambled 
         if (latest) setTime(timeLeft - 1);
       }, 1000);
     } else {
-      // axios
-      //   .post(`${url}/leaders`, {
-      //     word: unScrambled,
-      //     username: 'PhiAgent',
-      //     score
-      //   })
-      //   .then(result => result.data)
-      //   .catch(err => )
+      let leaderCopy = JSON.parse(JSON.stringify(leaders));
+      let newLeaderFound = updateLeaders(leaderCopy, score, currentPlayer);
+      if (newLeaderFound){
+        axios
+          .post(`${url}/leaders`, {
+            word: unScrambled,
+            username: currentPlayer,
+            score
+          })
+          .then(result => result.data)
+          .catch(err => console.error(err));
+        setLeaders(leaderCopy);
+      }
       setGameOver(true);
       clearTimeout(timeOut);
     }
