@@ -63,6 +63,8 @@ const getLeaders = (word, cb) => {
    * @param {string} username - used to check if username is already in top 10
    * @returns {array} - returns an array with the current top 10 players of that letter set
    */
+
+// TODO: Handle db edit errors gracefully
 const updateScore = (word, username, newScore, cb) => {
   const query = 'SELECT username, score, word_id FROM leaderboard WHERE word = $1 LIMIT 10';
   pool

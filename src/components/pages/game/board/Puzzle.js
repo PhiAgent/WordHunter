@@ -7,7 +7,6 @@ import useMode from '../../../../context/GameContext';
 import UserDisplay from './UserDisplay';
 import Timer from './Timer';
 import axios from 'axios';
-import url from '../../../../../server/url';
 
 const timer = 120;
 
@@ -28,8 +27,8 @@ const Puzzle = () => {
           setEnteredWords,
           current,
           setCurrent,
-          setLeaders
         } = useMode();
+
   const [gameOver, setGameOver] = useState(false);
 
   // Check if word is valid
@@ -59,23 +58,18 @@ const Puzzle = () => {
       }
     }
     setInfoDisplay(true);
-    const timer = setTimeout(() => {setInfoDisplay(false);
-      setCurrent('');
-    }, 1000);
+    const timer = setTimeout(
+      () => {
+        setInfoDisplay(false);
+        setCurrent('');
+      }, 1000
+    );
     clearBoard(true);
   };
 
   useEffect(() => {
     let latest = true;
-    axios
-      .get(
-        `${url}/leaders`, {
-        params: {'word': unScrambled},
-      })
-      .then(result =>
-              latest && setLeaders(result.data)
-            )
-      .catch(err => console.error(err));
+
     setCurrent('');
     setScore(0);
     setEnteredWords([]);
@@ -129,8 +123,6 @@ const Puzzle = () => {
       >
         <div></div>
         <Timer
-          clear={clear}
-          clearBoard={clearBoard}
           setGameOver={setGameOver}
           setTime={setTime}
           timeLeft={timeLeft}

@@ -5,7 +5,7 @@ import axios from 'axios';
 const url = require('../../../../../server/url');
 
 
-const Timer = ({ setGameOver, setTime, timeLeft, clear, clearBoard, unScrambled }) => {
+const Timer = ({ setGameOver, setTime, timeLeft, unScrambled }) => {
 
   const [count, setCount] = useState(-1);
   const { score, leaders, setLeaders, currentPlayer} = useMode();
@@ -17,7 +17,7 @@ const Timer = ({ setGameOver, setTime, timeLeft, clear, clearBoard, unScrambled 
       timeOut = setTimeout(() => {
         if (latest) setTime(timeLeft - 1);
       }, 1000);
-    } else {
+    } else if (timeLeft === 0) {
       let leaderCopy = JSON.parse(JSON.stringify(leaders));
       let newLeaderFound = updateLeaders(leaderCopy, score, currentPlayer);
       if (newLeaderFound){
@@ -33,6 +33,21 @@ const Timer = ({ setGameOver, setTime, timeLeft, clear, clearBoard, unScrambled 
       }
       setGameOver(true);
       clearTimeout(timeOut);
+    } else if (timeLeft === 'End Game') {
+      setGameOver(true);
+    }
+
+    // Fetch highest scorers before game ends
+    if(timeLeft === 5) {
+      axios
+        .get(
+          `${url}/leaders`, {
+          params: { 'word': unScrambled },
+        })
+        .then(result =>
+          !gameOver && setLeaders(result.data)
+        )
+        .catch(err => console.error(err));
     }
 
     // Avoid race condition

@@ -13,6 +13,7 @@ export const ContextProvider = ({children}) => {
   const [current, setCurrent] = useState('');
   const [leaders, setLeaders] = useState([]);
   const [currentPlayer, setPlayer] = useState('PhiAgent');
+  console.log(leaders)
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {

@@ -18,12 +18,12 @@ const Login = () => {
   const validate = () => {
     let noSpace = /^\S+$/g;
 
-    if(input.length < 6) {//Too short
-      setErrors('Username must be at least 6 characters');
+    if(input.length < 5) {//Too short
+      setErrors('Username must be at least 5 characters');
       return false;
 
-    } else if (input.length > 23) {//Too Long
-      setErrors('Username must be at most 23 characters');
+    } else if (input.length > 10) {//Too Long
+      setErrors('Username must be at most 10 characters');
       return false;
 
     } else if (!(input[0].toUpperCase() in scoreSheet)) {//Does not start with letter
@@ -31,7 +31,7 @@ const Login = () => {
       return false;
 
     } else if (!username) {//Nothing entered
-      setErrors('Username must be at least 6 characters');
+      setErrors('Username must be be at least 5 characters');
       return false;
 
     } else if (!noSpace.test(input)) {//Has spaces
