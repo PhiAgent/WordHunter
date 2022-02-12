@@ -206,7 +206,7 @@ a:hover {
 
 /* Board */
 
-.game {
+.game, .endGame {
   margin-top: 20px;
 }
 
@@ -375,4 +375,33 @@ a:hover {
 
 .customDanger {
   background-color: #ED4337;
+}
+
+/* EndPage */
+
+.solutionWords {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  color: var(--black);
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  width: 40%;
+}
+
+.col2 {
+  text-align: right;
+}
+
+/* thead, tr {
+  width: 100%;
+} */
+
+.dark .table {
+  color: var(--white);
 }

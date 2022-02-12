@@ -75,4 +75,17 @@ const continousTense = (parentStr, str) => {
   return isContinuous && (str.slice(0, -3) in candidates[parentStr]);
 }
 
-module.exports = { shuffle, getRandomWord, secondsToMinutes, updateLeaders, continousTense};
+const findSolutionWords = str => {
+  const words = [];
+
+  for(let key in candidates[str]) {
+    words.push(key);
+  };
+
+  words.sort((str1, str2) => str1.length > str2.length ? -1 : 1);
+
+  return words.slice(0, 50);
+}
+
+
+module.exports = { shuffle, getRandomWord, secondsToMinutes, updateLeaders, continousTense, findSolutionWords};

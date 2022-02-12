@@ -4,7 +4,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Login from "./components/pages/Login";
 import Header from "./components/title/Header";
 import { ContextProvider } from "./context/GameContext";
-import Game from "./components/pages/game/Game";
+// import Game from "./components/pages/game/Game";
+import LastPage from "./components/pages/endPages/LastPage";
 
 const App = () => {
 
@@ -12,7 +13,8 @@ const App = () => {
     <ContextProvider>
       <Header/>
       {/* <Login/> */}
-      <Game/>
+      {/* <Game/> */}
+      <LastPage/>
     </ContextProvider>
   );
 }

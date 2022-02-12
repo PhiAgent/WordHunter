@@ -9,11 +9,10 @@ export const ContextProvider = ({children}) => {
   const [lightMode, setLightMode] = useState(true);
   const [colorBlind, setColorBlind] = useState(false);
   const [score, setScore] = useState(0);
-  const [enteredWords, setEnteredWords] = useState([]);
+  const [enteredWords, setEnteredWords] = useState(['apple', 'gerrard']);
   const [current, setCurrent] = useState('');
   const [leaders, setLeaders] = useState([]);
   const [currentPlayer, setPlayer] = useState('PhiAgent');
-  console.log(leaders)
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
