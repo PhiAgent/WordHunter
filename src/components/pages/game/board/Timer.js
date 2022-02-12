@@ -21,6 +21,7 @@ const Timer = ({ setGameOver, setTime, timeLeft, unScrambled }) => {
       let leaderCopy = JSON.parse(JSON.stringify(leaders));
       let newLeaderFound = updateLeaders(leaderCopy, score, currentPlayer);
       if (newLeaderFound){
+        setLeaders(leaderCopy);
         axios
           .post(`${url}/leaders`, {
             word: unScrambled,
@@ -29,7 +30,6 @@ const Timer = ({ setGameOver, setTime, timeLeft, unScrambled }) => {
           })
           .then(result => result.data)
           .catch(err => console.error(err));
-        setLeaders(leaderCopy);
       }
       setGameOver(true);
       clearTimeout(timeOut);

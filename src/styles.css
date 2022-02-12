@@ -319,11 +319,8 @@ a:hover {
   color:#000000;
 }
 
-.timerDisplay {
-  vertical-align: text-top;
-}
 
-.timer {
+.timer, .timerDisplay {
   vertical-align: text-top;
 }
 
@@ -369,8 +366,12 @@ a:hover {
   background-color: #FB875A;
 }
 
-.customSuccess {
-  background-color: #5CB85C;
+.customSuccess, .highlight {
+  background-color: yellowgreen !important;
+}
+
+.dark .customSuccess, .dark .highlight {
+  background-color: green !important;
 }
 
 .customDanger {
@@ -404,4 +405,12 @@ a:hover {
 
 .dark .table {
   color: var(--white);
+}
+
+.highlight {
+  border-radius: 10px;
+}
+
+.check {
+  vertical-align: middle;
 }
