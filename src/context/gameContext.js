@@ -11,7 +11,7 @@ export const ContextProvider = ({children}) => {
   const [score, setScore] = useState(0);
   const [enteredWords, setEnteredWords] = useState(['ambiences', 'caimen']);
   const [current, setCurrent] = useState('');
-  const [leaders, setLeaders] = useState([]);
+  const [leaders, setLeaders] = useState([{ username: 'Newton', score: 73, word_id: 1 }]);
   const [currentPlayer, setPlayer] = useState('PhiAgent');
 
   // Centralized Dark Mode & ColorMode Switch

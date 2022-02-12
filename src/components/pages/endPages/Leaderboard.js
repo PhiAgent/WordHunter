@@ -20,20 +20,17 @@ const Leaderboard = () => {
         </thead>
         <tbody>
           {
-            solutionWords.map((word, i) =>
+            leaders.map((leader, i) =>
               <tr
-                key={`word${i}`}
-                className={`${enteredWords.includes(word) ? "highlight green" : ""}`}
+                key={`leader${i}`}
+                className={`${currentPlayer === leader.username ? "highlight green" : ""}`}
               >
                 <td>
-                  <span>{word}</span>
-                  &nbsp;
-                  &nbsp;
-                  {enteredWords.includes(word) ? <i class="bi bi-check2-all check"></i> : ""}
+                  {leader.username}
                 </td>
                 <td scope="col">
                   <div className={`col2`}>
-                    <span>{findScore(word)}
+                    <span>{leader.score}
                     </span>
                   </div>
                 </td>
