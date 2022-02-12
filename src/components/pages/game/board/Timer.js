@@ -48,7 +48,7 @@ const Timer = ({ setGameOver, setTime, timeLeft, clear, clearBoard, unScrambled 
         <i
           className="bi bi-stopwatch-fill timer">
         </i>&nbsp;
-        {secondsToMinutes(timeLeft)}
+        <span className='timeLeft'>{secondsToMinutes(timeLeft)}</span>
       </h2>
     </div>
   )

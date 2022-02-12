@@ -40,27 +40,28 @@ const Puzzle = () => {
     if(letters) {
       if(enteredWords.includes(letters)) {
         //transitions of already entered
-        setPopClass('warning');
+        setPopClass('customWarning');
         setMessage(`Already tried that`);
       } else if ((letters in candidates[unScrambled]) || continousTense(unScrambled, letters)) {
         let points = findScore(letters);
         setScore(score + points);
         setEnteredWords([letters, ...enteredWords]);
         setMessage(`Great Job! +${points}`);
-        setPopClass('success');
+        setPopClass('customSuccess green');
       } else if(letters.length < 3) {
         // transitions of tooShort
         setMessage('Too short');
-        setPopClass('danger');
+        setPopClass('customDanger');
       } else {
         // transitions for invalid
         setMessage('Not valid');
-        setPopClass('danger');
+        setPopClass('customDanger');
       }
     }
     setInfoDisplay(true);
-    // const timer = setTimeout(() => setInfoDisplay(false), 1500);
-    setCurrent('');
+    const timer = setTimeout(() => {setInfoDisplay(false);
+      setCurrent('');
+    }, 1000);
     clearBoard(true);
   };
 

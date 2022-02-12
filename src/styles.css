@@ -171,9 +171,9 @@ i.settings {
   margin-bottom: 8px;
 }
 
-.btn-primary {
+/* .btn-primary {
   border: solid 1px;
-}
+} */
 
 .btn-primary:hover {
   background-color: #1f1c0a;
@@ -319,8 +319,16 @@ a:hover {
   color:#000000;
 }
 
-.timerDisplay .timer {
+.timerDisplay {
   vertical-align: text-top;
+}
+
+.timer {
+  vertical-align: text-top;
+}
+
+.timeLeft {
+  height: 28px !important;
 }
 
 .timerDisplay {
@@ -355,4 +363,16 @@ a:hover {
  font-size: 1.125rem;
  padding: 0.25rem 1rem;
  border-radius: 20rem;
+}
+
+.customWarning {
+  background-color: #FB875A;
+}
+
+.customSuccess {
+  background-color: #5CB85C;
+}
+
+.customDanger {
+  background-color: #ED4337;
 }

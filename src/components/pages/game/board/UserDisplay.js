@@ -8,15 +8,13 @@ const UserDisplay = ({ popUpClass, message, infoDisplay}) => {
   return (
     <div className="word-display">
       <div></div>
-        {!infoDisplay ? <ul className='guessed-word'>
+        <ul className='guessed-word'>
           {
             current.toUpperCase().split('').map((letter, i) =>
-              <li key={`letter${i}`}className="guessed-letter">{letter}</li>
+              <li key={`letter${i}`} className={`guessed-letter ${infoDisplay ? popUpClass : ""}`}>{letter}</li>
             )
           }
-          </ul> :
-          <WordResponse message={message} popUpClass={popUpClass}/>
-        }
+        </ul>
       <div></div>
     </div>
   )
