@@ -221,7 +221,7 @@ a:hover {
   margin: 6px;
   border-radius: 10px;
   width:150px;
-  height: 100px;
+  height: 90px;
   padding: 2%;
   font-family: var(--font-text);
   position: relative;
@@ -343,6 +343,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 300px;
 }
 
 /* .endGame {

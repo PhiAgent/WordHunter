@@ -68,8 +68,7 @@ const Settings = () => {
                     "bi  bi-toggle-off settings"
                     }`
                   }
-                  onClick={changeColorBlind
-                  }
+                  onClick={changeColorBlind}
                 >
                 </i>
             </div>

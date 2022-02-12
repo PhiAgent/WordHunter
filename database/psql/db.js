@@ -44,7 +44,9 @@ const getLeaders = (word, cb) => {
         .query(query, [word])
         .then(leaders => {
           client.release();
-          let ranking = leaders.rows.sort((leader1, leader2) => leader1.score > leader2.score ? -1 : 1);
+          let ranking = leaders.rows.sort((leader1, leader2) =>
+              leader1.score > leader2.score ? -1 : 1
+            );
           cb(null, ranking);
         })
         .catch(err => {

@@ -6,6 +6,8 @@ import candidates from '../../../../utils/dictionary';
 import useMode from '../../../../context/GameContext';
 import Word from './Word';
 import Timer from './Timer';
+import axios from 'axios';
+import url from '../../../../../server/url';
 
 const Puzzle = () => {
 
@@ -14,7 +16,15 @@ const Puzzle = () => {
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
   const [timeLeft, setTime] = useState(120);
-  const { score, setScore, enteredWords, setEnteredWords, current, setCurrent} = useMode();
+  const {
+          score,
+          setScore,
+          enteredWords,
+          setEnteredWords,
+          current,
+          setCurrent,
+          setLeaders
+        } = useMode();
   const [gameOver, setGameOver] = useState(false);
 
   // Check if word is valid
@@ -38,12 +48,24 @@ const Puzzle = () => {
   };
 
   useEffect(() => {
+    let latest = true;
+    axios
+      .get(
+        `${url}/leaders`, {
+        params: {'word': unScrambled},
+      })
+      .then(result =>
+              latest && setLeaders(result.data)
+            )
+      .catch(err => console.error(err));
     setCurrent('');
     setScore(0);
     setEnteredWords([]);
     clearBoard(true);
     setTime(120);
     setWord(shuffle(unScrambled));
+
+    return () => latest = false;
   }, [unScrambled]);
 
   const reset = () => {
@@ -93,6 +115,7 @@ const Puzzle = () => {
           setGameOver={setGameOver}
           setTime={setTime}
           timeLeft={timeLeft}
+          unScrambled={unScrambled}
         />
         <div></div>
       </div>
@@ -104,7 +127,7 @@ const Puzzle = () => {
             className="btn btn-primary endGame"
           // onClick={checkWord}
             >
-              EndGame
+              &nbsp;Quit&nbsp;
             </button>
           </div>
           <div>

@@ -11,16 +11,18 @@ export const ContextProvider = ({children}) => {
   const [score, setScore] = useState(0);
   const [enteredWords, setEnteredWords] = useState([]);
   const [current, setCurrent] = useState('');
+  const [leaders, setLeaders] = useState([]);
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
     document.body.classList[lightMode ? 'add' : 'remove']('dark');
     setLightMode(!lightMode);
-  }
+  };
+
   const changeColorBlind = () => {
     document.body.classList[colorBlind ? 'remove' : 'add']('color-blind');
     setColorBlind(!colorBlind);
-  }
+  };
 
   return(
     <ThemeContext.Provider value={{
@@ -33,7 +35,9 @@ export const ContextProvider = ({children}) => {
       enteredWords,
       setEnteredWords,
       current,
-      setCurrent
+      setCurrent,
+      setLeaders,
+      leaders
     }}>
       {children}
     </ThemeContext.Provider>

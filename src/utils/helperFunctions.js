@@ -30,4 +30,41 @@ const secondsToMinutes = seconds => {
   return `${minutes}:${secs > 9 ? secs : `0${secs}`}`;
 }
 
-module.exports = { shuffle, getRandomWord, secondsToMinutes};
+// Checks if user has made it into top 10
+const updateLeaders = (leaders, score, username) => {//It's important that leaders are sorted by score
+
+  let oldScore, userIndex;
+  const userIsLeader = leaders.some((leader, i) => {
+    if (leader.username === username) {
+      oldScore = leader.score;
+      userIndex = i;
+      return true;
+    }
+    return false;
+  });
+
+  if (userIsLeader) {
+    if (score > oldScore) {//replace score
+      leaders[userIndex]['score'] = score;
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    if (leaders.length < 3) {//add user
+      leaders.push({ username, score });
+      return true;
+    } else {
+      const lowestScore = leaders[leaders.length - 1]['score'];
+      if (score > lowestScore) {
+        leaders.pop();
+        leaders.push({ username, score });
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+};
+
+module.exports = { shuffle, getRandomWord, secondsToMinutes, updateLeaders};
