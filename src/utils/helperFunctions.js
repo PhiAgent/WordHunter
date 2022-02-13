@@ -1,5 +1,6 @@
 const words =  require('./words');
 const candidates = require('./dictionary');
+const { findScore } = require('./scoreGenerator');
 
 
 // Shuffles a given set of letters
@@ -82,7 +83,7 @@ const findSolutionWords = str => {
     words.push(key);
   };
 
-  words.sort((str1, str2) => str1.length > str2.length ? -1 : 1);
+  words.sort((str1, str2) => findScore(str1) > findScore(str2) ? -1 : 1);
 
   return words.slice(0, 50);
 }

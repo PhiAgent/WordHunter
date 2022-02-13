@@ -5,7 +5,7 @@ import {findScore} from '../../../utils/scoreGenerator';
 
 const SolutionWords = () => {
   const { enteredWords } = useMode();
-  const solutionWords = findSolutionWords('impetuses');
+  const solutionWords = findSolutionWords('appeasing');
 
   return (
     <div className='solutionWords'>
