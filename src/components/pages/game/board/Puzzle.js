@@ -8,28 +8,31 @@ import UserDisplay from './UserDisplay';
 import Timer from './Timer';
 import axios from 'axios';
 
-const timer = 10;
+const timer = 6;
 
 const Puzzle = () => {
 
+  const {
+    score,
+    setScore,
+    enteredWords,
+    setEnteredWords,
+    currentEntry,
+    setCurrentEntry,
+    gameOver,
+    setGameOver,
+    unScrambled,
+    setUnScrambled,
+  } = useMode();
+
   // States
-  const [unScrambled, setUnScrambled] = useState(getRandomWord());
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
   const [timeLeft, setTime] = useState(timer);
   const [popUpClass, setPopClass] = useState('');
   const [message, setMessage] = useState('');
   const [infoDisplay, setInfoDisplay] = useState(false);
-  const {
-          score,
-          setScore,
-          enteredWords,
-          setEnteredWords,
-          currentEntry,
-          setCurrentEntry,
-          gameOver,
-          setGameOver,
-        } = useMode();
+
 
   // Check if word is valid
   const checkWord = e => {

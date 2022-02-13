@@ -1,5 +1,6 @@
 
 import React, {useContext, useState, createContext} from 'react';
+import { getRandomWord, shuffle } from '../utils/helperFunctions';
 
 const ThemeContext = createContext();
 
@@ -15,6 +16,7 @@ export const ContextProvider = ({children}) => {
   const [currentPlayer, setPlayer] = useState('');
   const [endStatus, setEndStatus] = useState(true);
   const [gameOver, setGameOver] = useState(false);
+  const [unScrambled, setUnScrambled] = useState(getRandomWord());
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
@@ -46,6 +48,8 @@ export const ContextProvider = ({children}) => {
       endStatus,
       gameOver,
       setGameOver,
+      unScrambled,
+      setUnScrambled,
     }}>
       {children}
     </ThemeContext.Provider>

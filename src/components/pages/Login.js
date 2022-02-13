@@ -17,8 +17,8 @@ const Login = () => {
   const validate = () => {
     let noSpace = /^\S+$/g;
 
-    if(input.length < 5) {//Too short
-      setErrors('Username must be at least 5 characters');
+    if(input.length < 3) {//Too short
+      setErrors('Username must be at least 3 characters');
       return false;
 
     } else if (input.length > 10) {//Too Long
@@ -30,7 +30,7 @@ const Login = () => {
       return false;
 
     } else if (!username) {//Nothing entered
-      setErrors('Username must be be at least 5 characters');
+      setErrors('Username must be be at least 3 characters');
       return false;
 
     } else if (!noSpace.test(input)) {//Has spaces

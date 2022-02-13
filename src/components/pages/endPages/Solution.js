@@ -4,8 +4,8 @@ import { findSolutionWords } from '../../../utils/helperFunctions';
 import {findScore} from '../../../utils/scoreGenerator';
 
 const SolutionWords = () => {
-  const { enteredWords } = useMode();
-  const solutionWords = findSolutionWords('appeasing');
+  const { enteredWords, unScrambled } = useMode();
+  const solutionWords = findSolutionWords(unScrambled);
 
   return (
     <div className='solutionWords'>

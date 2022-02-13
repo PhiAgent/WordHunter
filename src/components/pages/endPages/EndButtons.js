@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import useMode from '../../../context/GameContext';
 
 const EndButtons = () => {
+
+  const {setGameOver, setPlayer} = useMode();
 
   return (
     <div className='endButtons'>
@@ -9,7 +12,7 @@ const EndButtons = () => {
         <div>
           <button
             className="btn btn-primary endGame"
-          // onClick={checkWord}
+          onClick={() => setPlayer('')}
           >
             &nbsp;End Game&nbsp;
           </button>
@@ -17,7 +20,7 @@ const EndButtons = () => {
         <div>
           <button
             className="btn btn-primary endGame"
-            // onClick={reset}
+            onClick={() => setGameOver(false)}
           >
             Play Again!
           </button>
