@@ -28,7 +28,7 @@ const EndedGame = () => {
           <div className="wordsOrLeaders">
             <div>
               <button
-                className="btn btn-primary tabs"
+                className="btn btn-primary tabs tabs1"
                 onClick={showWords}
               >
                 &nbsp;WORDS&nbsp;
@@ -36,10 +36,10 @@ const EndedGame = () => {
             </div>
             <div>
               <button
-                className="btn btn-primary tabs"
+                className="btn btn-primary tabs tabs2"
                 onClick={showLeaders}
               >
-                LEADERBOARD
+                TOP SCORERS
               </button>
             </div>
           </div>

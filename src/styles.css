@@ -488,3 +488,11 @@ thead {
   flex-direction: row;
   width: inherited;
 }
+
+/* .tabs1, .tabs1:focus{
+  border-right: solid 1px;
+} */
+
+/* .tabs1:focus {
+  border-left: solid 2px;
+} */
