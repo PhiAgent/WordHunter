@@ -12,7 +12,11 @@ const EndButtons = () => {
         <div>
           <button
             className="btn btn-primary endGame"
-          onClick={() => setPlayer('')}
+          onClick={() => {
+            setPlayer('');
+            setGameOver(false);
+            }
+          }
           >
             &nbsp;End Game&nbsp;
           </button>
