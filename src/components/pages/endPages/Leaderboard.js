@@ -3,17 +3,16 @@ import useMode from '../../../context/GameContext';
 
 
 const Leaderboard = () => {
-  const {leaders, currentPlayer} = useMode;
+  const {leaders, currentPlayer} = useMode();
 
   return (
     <div className='leaderBoard'>
-      <h2>LEADERBOARD</h2>
       <table className="table">
         <thead>
           <tr>
             <th scope="col">Player</th>
             <th scope="col">
-              <div className='col2'>Ranking
+              <div className='col2'>Score
               </div>
             </th>
           </tr>

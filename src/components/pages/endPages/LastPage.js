@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import ScoreBoard from "../game/Scoreboard";
 import EndButtons from "./EndButtons";
 import SolutionWords from "./Solution";
+import EndedGame from "./EndsGame";
 
 
 const LastPage = () => {
 
   return (
-    <div className="endGame">
+    <div className="endGamePage">
       <ScoreBoard/>
-      {/* endedgame or gameover */}
+      <EndedGame/>
       <EndButtons/>
     </div>
   )

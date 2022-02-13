@@ -12,7 +12,8 @@ export const ContextProvider = ({children}) => {
   const [enteredWords, setEnteredWords] = useState(['ambiences', 'caimen']);
   const [current, setCurrent] = useState('');
   const [leaders, setLeaders] = useState([{ username: 'Newton', score: 73, word_id: 1 }]);
-  const [currentPlayer, setPlayer] = useState('PhiAgent');
+  const [currentPlayer, setPlayer] = useState('Newton');
+  const [endStatus, setEndStatus] = useState(true);
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
@@ -40,7 +41,8 @@ export const ContextProvider = ({children}) => {
       setLeaders,
       leaders,
       currentPlayer,
-      setPlayer
+      setPlayer,
+      endStatus
     }}>
       {children}
     </ThemeContext.Provider>

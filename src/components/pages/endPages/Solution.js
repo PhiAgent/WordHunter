@@ -9,7 +9,6 @@ const SolutionWords = () => {
 
   return (
     <div className='solutionWords'>
-      <h2>WORDS</h2>
       <table className="table">
         <thead>
           <tr>
@@ -28,7 +27,7 @@ const SolutionWords = () => {
                   <span>{word}</span>
                   &nbsp;
                   &nbsp;
-                  {enteredWords.includes(word) ? <i class="bi bi-check2-all check"></i> : ""}
+                  {enteredWords.includes(word) ? <i className="bi bi-check2-all check"></i> : ""}
                 </td>
                 <td scope="col">
                   <div className={`col2`}>

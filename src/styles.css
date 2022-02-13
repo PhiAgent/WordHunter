@@ -206,7 +206,7 @@ a:hover {
 
 /* Board */
 
-.game, .endGame {
+.game, .endGamePage {
   margin-top: 20px;
 }
 
@@ -286,7 +286,7 @@ a:hover {
   background-color: #b2d4dd;
 }
 
-.word-display, .buttonRow, .timerRow, .stopGameRow {
+.word-display, .buttonRow, .timerRow, .stopGameRow, .endButtons {
   display:flex;
   justify-content: space-around;
   flex-direction: row;
@@ -351,6 +351,7 @@ a:hover {
   width: 300px;
 }
 
+
 /* .endGame {
   margin-right: 10px;
 } */
@@ -380,11 +381,12 @@ a:hover {
 
 /* EndPage */
 
-.solutionWords {
+.solutionWords, .leaderBoard {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* height: 100%; */
 }
 
 .table {
@@ -392,7 +394,7 @@ a:hover {
   /* display: flex; */
   /* justify-content: space-between; */
   /* align-items: center; */
-  width: 40%;
+  width: 100%;
 }
 
 .col2 {
@@ -413,4 +415,71 @@ a:hover {
 
 .check {
   vertical-align: middle;
+}
+
+.gameOver {
+  /* height: 400px;
+  overflow: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.tables {
+  height: 400px;
+  overflow: auto;
+}
+/*
+.gameEnded {
+  display: flex;
+  flex-direction: row;
+} */
+
+.endButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.wordsOrLeaders {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.tabs {
+  border-radius: 0 !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+thead {
+  position: -webkit-sticky;
+  border-bottom: 2px solid #ccc;
+  background: gray;
+  position: sticky;
+  top: 0;
+}
+
+.gameOverDisplay {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wordsOrLeaders {
+  display: flex;
+  flex-direction: row;
+  width: inherited;
 }
