@@ -12,9 +12,9 @@ const App = () => {
   return (
     <ContextProvider>
       <Header/>
-      {/* <Login/> */}
+      <Login/>
       {/* <Game/> */}
-      <LastPage/>
+      {/* <LastPage/> */}
     </ContextProvider>
   );
 }
