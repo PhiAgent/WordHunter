@@ -17,7 +17,7 @@ const EndedGame = () => {
   const showLeaders = () => {
     setLeaders(true);
     setWords(false);
-  }
+  };
 
 
   return (
