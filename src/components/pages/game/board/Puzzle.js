@@ -8,7 +8,7 @@ import UserDisplay from './UserDisplay';
 import Timer from './Timer';
 import axios from 'axios';
 
-const timer = 120;
+const timer = 10;
 
 const Puzzle = () => {
 
@@ -25,16 +25,16 @@ const Puzzle = () => {
           setScore,
           enteredWords,
           setEnteredWords,
-          current,
-          setCurrent,
+          currentEntry,
+          setCurrentEntry,
+          gameOver,
+          setGameOver,
         } = useMode();
-
-  const [gameOver, setGameOver] = useState(false);
 
   // Check if word is valid
   const checkWord = e => {
     e.preventDefault();
-    let letters = current.toLowerCase();
+    let letters = currentEntry.toLowerCase();
 
     if(letters) {
       if(enteredWords.includes(letters)) {
@@ -61,7 +61,7 @@ const Puzzle = () => {
     const timer = setTimeout(
       () => {
         setInfoDisplay(false);
-        setCurrent('');
+        setCurrentEntry('');
       }, 1000
     );
     clearBoard(true);
@@ -70,7 +70,7 @@ const Puzzle = () => {
   useEffect(() => {
     let latest = true;
 
-    setCurrent('');
+    setCurrentEntry('');
     setScore(0);
     setEnteredWords([]);
     clearBoard(true);
@@ -95,7 +95,7 @@ const Puzzle = () => {
       >
         <div></div>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary submit"
         onClick={checkWord}
       >
         Submit
@@ -112,8 +112,8 @@ const Puzzle = () => {
             letter={letter}
             clear={clear}
             clearBoard={clearBoard}
-            current={current}
-            setCurrent={setCurrent}
+            currentEntry={currentEntry}
+              setCurrentEntry={setCurrentEntry}
           />
           )
         }
@@ -123,7 +123,6 @@ const Puzzle = () => {
       >
         <div></div>
         <Timer
-          setGameOver={setGameOver}
           setTime={setTime}
           timeLeft={timeLeft}
           unScrambled={unScrambled}

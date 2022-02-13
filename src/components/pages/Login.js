@@ -4,8 +4,7 @@ import {scoreSheet} from '../../utils/scoreGenerator';
 
 const Login = () => {
 
-  const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
-
+  const { setPlayer } = useMode();
 
   const [input, setInput] = useState('');
   const [errors, setErrors] = useState('');
@@ -49,11 +48,11 @@ const Login = () => {
   const handleSubmit = e => {
     e.preventDefault();
     let noErrors = validate();
-    // setErrors('');
+
     if(noErrors) {
-      // update username in localStorage
-      // setErrors('');
-      // setInput('');
+      const player = input;
+      setPlayer(player);
+      setInput('');
     }
   }
 
@@ -69,7 +68,7 @@ const Login = () => {
                 id="username"
                 name="username"
                 aria-describedby="usernameHelp"
-                placeholder="What is your username?"
+                placeholder="What is your nickname?"
                 value={input}
                 onChange={handleChange}
               />

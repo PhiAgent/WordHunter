@@ -9,11 +9,12 @@ export const ContextProvider = ({children}) => {
   const [lightMode, setLightMode] = useState(true);
   const [colorBlind, setColorBlind] = useState(false);
   const [score, setScore] = useState(0);
-  const [enteredWords, setEnteredWords] = useState(['ambiences', 'caimen']);
-  const [current, setCurrent] = useState('');
-  const [leaders, setLeaders] = useState([{ username: 'Newton', score: 73, word_id: 1 }]);
-  const [currentPlayer, setPlayer] = useState('Newton');
+  const [enteredWords, setEnteredWords] = useState([]);
+  const [currentEntry, setCurrentEntry] = useState('');
+  const [leaders, setLeaders] = useState([]);
+  const [currentPlayer, setPlayer] = useState('');
   const [endStatus, setEndStatus] = useState(true);
+  const [gameOver, setGameOver] = useState(false);
 
   // Centralized Dark Mode & ColorMode Switch
   const changeMode = () => {
@@ -36,13 +37,15 @@ export const ContextProvider = ({children}) => {
       score,
       enteredWords,
       setEnteredWords,
-      current,
-      setCurrent,
+      currentEntry,
+      setCurrentEntry,
       setLeaders,
       leaders,
       currentPlayer,
       setPlayer,
-      endStatus
+      endStatus,
+      gameOver,
+      setGameOver,
     }}>
       {children}
     </ThemeContext.Provider>

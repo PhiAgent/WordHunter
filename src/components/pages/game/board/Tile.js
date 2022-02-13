@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Tile = ({ letter, current, clear, clearBoard, setCurrent  }) => {
+const Tile = ({ letter, currentEntry, clear, clearBoard, setCurrentEntry  }) => {
   const [bgColor, setBgColor] = useState('white');
 
   useEffect(() => {
@@ -16,12 +16,12 @@ const Tile = ({ letter, current, clear, clearBoard, setCurrent  }) => {
     // Select letter
     if (bgColor === 'white' || bgColor === '#ADD8E6') {
       setBgColor('#0275d8');
-      setCurrent(current + letter);
+      setCurrentEntry(currentEntry + letter);
     }
     // Allow user to go back
-    else if (bgColor === '#0275d8' && current.slice(-1) === letter) {
+    else if (bgColor === '#0275d8' && currentEntry.slice(-1) === letter) {
       setBgColor('white');
-      setCurrent(current.slice(0, -1));
+      setCurrentEntry(currentEntry.slice(0, -1));
     }
   }
 

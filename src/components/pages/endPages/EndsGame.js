@@ -34,14 +34,17 @@ const EndedGame = () => {
                 &nbsp;WORDS&nbsp;
               </button>
             </div>
-            <div>
-              <button
-                className="btn btn-primary tabs tabs2"
-                onClick={showLeaders}
-              >
-                TOP SCORERS
-              </button>
-            </div>
+            {
+              endStatus &&
+              <div>
+                <button
+                  className="btn btn-primary tabs tabs2"
+                  onClick={showLeaders}
+                >
+                  TOP SCORERS
+                </button>
+              </div>
+            }
           </div>
           <div className="tables">
             {

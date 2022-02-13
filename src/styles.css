@@ -171,11 +171,6 @@ i.settings {
   margin-bottom: 8px;
 }
 
-.btn:focus {
-  box-shadow: none;
-  margin-bottom: 0px !important;
-}
-
 /* .btn-primary {
   border: solid 1px;
 } */
@@ -466,6 +461,10 @@ a:hover {
 .tabs {
   border-radius: 0 !important;
   margin-top: 0px;
+  margin-bottom: 0px !important;
+}
+.tabs:focus {
+  box-shadow: none;
   margin-bottom: 0px !important;
 }
 

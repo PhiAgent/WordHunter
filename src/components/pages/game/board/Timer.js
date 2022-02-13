@@ -5,18 +5,31 @@ import axios from 'axios';
 const url = require('../../../../../server/url');
 
 
-const Timer = ({ setGameOver, setTime, timeLeft, unScrambled }) => {
+const Timer = ({
+                  setTime,
+                  timeLeft,
+                  unScrambled
+                }) => {
 
   const [count, setCount] = useState(-1);
-  const { score, leaders, setLeaders, currentPlayer} = useMode();
+
+  const {
+          score,
+          leaders,
+          setLeaders,
+          currentPlayer,
+          setGameOver
+        } = useMode();
 
   useEffect(() => {
     let timeOut, latest = true;
 
     if (timeLeft > 0) {
+
       timeOut = setTimeout(() => {
         if (latest) setTime(timeLeft - 1);
       }, 1000);
+
     } else if (timeLeft === 0) {
       let leaderCopy = JSON.parse(JSON.stringify(leaders));
       let newLeaderFound = updateLeaders(leaderCopy, score, currentPlayer);

@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="title">
       <Help/>
-      <h1>Word Game</h1>
+      <h1>Fundle</h1>
       <Settings />
     </header>
   )

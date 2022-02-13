@@ -3,19 +3,24 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Login from "./components/pages/Login";
 import Header from "./components/title/Header";
-import { ContextProvider } from "./context/GameContext";
-// import Game from "./components/pages/game/Game";
+import useMode from "./context/GameContext";
+import Game from "./components/pages/game/Game";
 import LastPage from "./components/pages/endPages/LastPage";
 
 const App = () => {
 
+  const {
+          currentPlayer,
+          gameOver
+        } = useMode();
+
   return (
-    <ContextProvider>
+    <div className="app">
       <Header/>
-      <Login/>
-      {/* <Game/> */}
-      {/* <LastPage/> */}
-    </ContextProvider>
+      {!currentPlayer && <Login />}
+      {currentPlayer && !gameOver && <Game/> }
+      {currentPlayer && gameOver && <LastPage/>}
+    </div>
   );
 }
 
