@@ -116,7 +116,7 @@ const Puzzle = () => {
             clear={clear}
             clearBoard={clearBoard}
             currentEntry={currentEntry}
-              setCurrentEntry={setCurrentEntry}
+            setCurrentEntry={setCurrentEntry}
           />
           )
         }
@@ -138,7 +138,7 @@ const Puzzle = () => {
           <div>
             <button
             className="btn btn-primary endGame"
-          // onClick={checkWord}
+              onClick={() => setTime('End Game')}
             >
               &nbsp;Quit&nbsp;
             </button>
