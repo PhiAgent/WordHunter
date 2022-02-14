@@ -7,7 +7,8 @@ const EndButtons = () => {
   const {
           setGameOver,
           setPlayer,
-          setUnScrambled
+          setUnScrambled,
+          setEndStatus
         } = useMode();
 
   return (
@@ -33,6 +34,7 @@ const EndButtons = () => {
             onClick={() => {
                 setGameOver(false);
                 setUnScrambled(getRandomWord());
+                setEndStatus(true);
               }
             }
           >

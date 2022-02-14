@@ -6,7 +6,7 @@ import SolutionWords from "./Solution";
 const EndedGame = () => {
 
   const {endStatus, leaders} = useMode();
-  const [shoLeaders, setLeaders] = useState(false);
+  const [presentLeaders, setLeaders] = useState(false);
   const [words, setWords] = useState(true);
 
   const showWords = () => {
@@ -51,7 +51,7 @@ const EndedGame = () => {
             {
               endStatus ?
                 <div className="gameEnded">
-                  {shoLeaders ?
+                  {presentLeaders ?
                     <Leaderboard />:
                     <SolutionWords />
                   }

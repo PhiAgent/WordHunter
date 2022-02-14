@@ -7,6 +7,7 @@ import useMode from '../../../../context/GameContext';
 import UserDisplay from './UserDisplay';
 import Timer from './Timer';
 import axios from 'axios';
+import { useLocalStorage } from '../../../../hooks/useLocalStorage';
 
 const timer = 20;
 
@@ -29,11 +30,10 @@ const Puzzle = () => {
   // States
   const [word, setWord] = useState(shuffle(unScrambled));
   const [clear, clearBoard] = useState(false);
-  const [timeLeft, setTime] = useState(timer);
+  const [timeLeft, setTime] = useState(timeLeft);
   const [popUpClass, setPopClass] = useState('');
   const [message, setMessage] = useState('');
   const [infoDisplay, setInfoDisplay] = useState(false);
-
 
   // Check if word is valid
   const checkWord = e => {
@@ -72,7 +72,6 @@ const Puzzle = () => {
   };
 
   useEffect(() => {
-    let latest = true;
 
     setCurrentEntry('');
     setScore(0);
@@ -82,7 +81,6 @@ const Puzzle = () => {
     setWord(shuffle(unScrambled));
     setGameOver(false);
 
-    return () => latest = false;
   }, [unScrambled]);
 
   const reset = () => {

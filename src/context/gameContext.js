@@ -8,16 +8,17 @@ const ThemeContext = createContext();
 export const ContextProvider = ({children}) => {
 
   // States
-  const [lightMode, setLightMode] = useLocalStorage(true);
-  const [colorBlind, setColorBlind] = useState(false);
-  const [score, setScore] = useState(0);
-  const [enteredWords, setEnteredWords] = useState([]);
+  const [lightMode, setLightMode] = useLocalStorage('lightmode', true);
+  const [colorBlind, setColorBlind] = useLocalStorage('colorBlind', false);
+  const [score, setScore] = useLocalStorage('score', 0);
+  const [enteredWords, setEnteredWords] = useLocalStorage('enteredWords', []);
   const [currentEntry, setCurrentEntry] = useState('');
-  const [leaders, setLeaders] = useState([]);
+  const [leaders, setLeaders] = useLocalStorage('leaders', []);
   const [currentPlayer, setPlayer] = useLocalStorage('currentPlayer', '');
-  const [endStatus, setEndStatus] = useState(true);
-  const [gameOver, setGameOver] = useState(false);
-  const [unScrambled, setUnScrambled] = useState(getRandomWord());
+  const [endStatus, setEndStatus] = useLocalStorage('endStatus', true);
+  const [gameOver, setGameOver] = useLocalStorage('gameOver', false);
+  const [unScrambled, setUnScrambled] =
+    useLocalStorage('unScrambled', getRandomWord());
 
   // Centralized Dark Mode & ColorBlindMode Switch
   const changeMode = () => {
