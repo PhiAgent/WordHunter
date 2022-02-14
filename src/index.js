@@ -6,9 +6,7 @@ import { ContextProvider } from "./context/GameContext";
 
 
 var mountNode = document.getElementById("app");
-ReactDOM.render(
-                <ContextProvider>
-                  <App name="Jane" />
+ReactDOM.render(<ContextProvider>
+                  <App />
                 </ContextProvider>
-                , mountNode
-                );
+                , mountNode);

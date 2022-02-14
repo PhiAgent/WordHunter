@@ -59,7 +59,8 @@ const Timer = ({
           params: { 'word': unScrambled },
         })
         .then(result =>
-          !gameOver && setLeaders(result.data)
+          setLeaders(result.data)
+          // !gameOver && setLeaders(result.data);
         )
         .catch(err => console.error(err));
     }
