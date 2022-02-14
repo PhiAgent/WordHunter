@@ -21,8 +21,8 @@ const Login = () => {
       setErrors('Username must be at least 3 characters');
       return false;
 
-    } else if (input.length > 10) {//Too Long
-      setErrors('Username must be at most 10 characters');
+    } else if (input.length > 20) {//Too Long
+      setErrors('Username must be at most 20 characters');
       return false;
 
     } else if (!(input[0].toUpperCase() in scoreSheet)) {//Does not start with letter
