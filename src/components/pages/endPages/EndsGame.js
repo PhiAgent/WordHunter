@@ -21,7 +21,7 @@ const EndedGame = () => {
 
 
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       <div></div>
       <div className='gameOver'>
         <div className="gameOverDisplay">

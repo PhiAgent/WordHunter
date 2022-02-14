@@ -23,6 +23,7 @@ const Puzzle = () => {
     setGameOver,
     unScrambled,
     setUnScrambled,
+    setEndStatus
   } = useMode();
 
   // States
@@ -65,7 +66,7 @@ const Puzzle = () => {
       () => {
         setInfoDisplay(false);
         setCurrentEntry('');
-      }, 1000
+      }, 250
     );
     clearBoard(true);
   };
@@ -138,7 +139,11 @@ const Puzzle = () => {
           <div>
             <button
             className="btn btn-primary endGame"
-              onClick={() => setTime('End Game')}
+              onClick={() => {
+                  setTime('End Game');
+                  setEndStatus(false);
+                }
+              }
             >
               &nbsp;Quit&nbsp;
             </button>

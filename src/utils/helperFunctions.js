@@ -10,7 +10,10 @@ const shuffle = str => {
 
   while (currentIndex >= 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
-    [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+
+    [arr[currentIndex], arr[randomIndex]] =
+    [arr[randomIndex], arr[currentIndex]];
+
     currentIndex -= 1;
   }
 
@@ -20,15 +23,19 @@ const shuffle = str => {
 // Picks a random word
 const getRandomWord = () => {
   let count = [];
-  randomIndex = Math.floor(Math.random() * words.length)
+
+  randomIndex = Math.floor(Math.random() * words.length);
+
   return words[randomIndex];
 }
 
 // Converts seconds into minutes
 const secondsToMinutes = seconds => {
   if (!seconds || typeof seconds === 'string') return '0:00';
+
   const minutes = seconds > 60 ? Math.floor(seconds / 60) : 0;
   const secs = seconds - 60 * minutes;
+
   return `${minutes}:${secs > 9 ? secs : `0${secs}`}`;
 }
 
@@ -59,6 +66,7 @@ const updateLeaders = (leaders, score, username) => {//It's important that leade
       return true;
     } else {
       const lowestScore = leaders[leaders.length - 1]['score'];
+
       if (score > lowestScore) {
         leaders.pop();
         leaders.push({ username, score });

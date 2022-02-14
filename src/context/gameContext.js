@@ -18,7 +18,7 @@ export const ContextProvider = ({children}) => {
   const [gameOver, setGameOver] = useState(false);
   const [unScrambled, setUnScrambled] = useState(getRandomWord());
 
-  // Centralized Dark Mode & ColorMode Switch
+  // Centralized Dark Mode & ColorBlindMode Switch
   const changeMode = () => {
     document.body.classList[lightMode ? 'add' : 'remove']('dark');
     setLightMode(!lightMode);
@@ -46,6 +46,7 @@ export const ContextProvider = ({children}) => {
       currentPlayer,
       setPlayer,
       endStatus,
+      setEndStatus,
       gameOver,
       setGameOver,
       unScrambled,
@@ -57,7 +58,7 @@ export const ContextProvider = ({children}) => {
 };
 
 // Supplies Context values in Consumer Components
-export const useMode = () => useContext(ThemeContext);
+const useMode = () => useContext(ThemeContext);
 
 export default useMode;
 
