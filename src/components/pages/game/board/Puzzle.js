@@ -8,7 +8,7 @@ import UserDisplay from './UserDisplay';
 import Timer from './Timer';
 import axios from 'axios';
 
-const timer = 6;
+const timer = 20;
 
 const Puzzle = () => {
 

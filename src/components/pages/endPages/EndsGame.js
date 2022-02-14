@@ -35,7 +35,7 @@ const EndedGame = () => {
               </button>
             </div>
             {
-              endStatus && leaders.length ?
+              (endStatus && leaders.length) ?
               <div>
                 <button
                   className="btn btn-primary tabs tabs2"
