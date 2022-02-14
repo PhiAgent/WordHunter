@@ -8,14 +8,14 @@ const ThemeContext = createContext();
 export const ContextProvider = ({children}) => {
 
   // States
-  const [lightMode, setLightMode] = useLocalStorage('lightmode', true);
+  const [lightMode, setLightMode] = useLocalStorage('lightmode', false);
   const [colorBlind, setColorBlind] = useLocalStorage('colorBlind', false);
   const [score, setScore] = useLocalStorage('score', 0);
   const [enteredWords, setEnteredWords] = useLocalStorage('enteredWords', []);
   const [currentEntry, setCurrentEntry] = useState('');
   const [leaders, setLeaders] = useLocalStorage('leaders', []);
   const [currentPlayer, setPlayer] = useLocalStorage('currentPlayer', '');
-  const [endStatus, setEndStatus] = useLocalStorage('endStatus', true);
+  // const [endStatus, setEndStatus] = useLocalStorage('endStatus', true);
   const [gameOver, setGameOver] = useLocalStorage('gameOver', false);
   const [unScrambled, setUnScrambled] =
     useLocalStorage('unScrambled', getRandomWord());
@@ -47,8 +47,8 @@ export const ContextProvider = ({children}) => {
       leaders,
       currentPlayer,
       setPlayer,
-      endStatus,
-      setEndStatus,
+      // endStatus,
+      // setEndStatus,
       gameOver,
       setGameOver,
       unScrambled,
