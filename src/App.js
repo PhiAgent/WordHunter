@@ -21,8 +21,8 @@ const App = () => {
   // Appropriately attach Dark/Colorblind Mode
   if(!lightMode && !document.body.classList.contains('dark'))
     document.body.classList.add('dark');
-  if (colorBlind && !document.body.classList.contains('color-blind'))
-    document.body.classList.add('color-blind');
+  // if (colorBlind && !document.body.classList.contains('color-blind'))
+  //   document.body.classList.add('color-blind');
 
   return (
     <div className="app">

@@ -199,11 +199,6 @@ i.settings {
   color: #eeede7;
 }
 
-/* add specificity to color blind by adding additional tags for the selected elements */
-.color-blind :is(i) {
-  color: #E66100;
-}
-
 .errors {
   color: red !important;
 }
@@ -383,6 +378,35 @@ a:hover {
 .dark .customSuccess, .dark .highlight {
   background-color: green !important;
 }
+
+.color-blind .dark .highlight {
+  background-color: green !important;
+}
+
+/* add specificity to color blind by adding additional tags for the selected elements */
+/* .color-blind .green {
+  background-color: #800080;
+} */
+
+/* .color-blind .green:hover {
+  background-color: #FF00FF;
+} */
+
+/* .dark .color-blind .green,
+.dark .color-blind .customSuccess .green,
+.dark .color-blind .highlight .green {
+  background-color: #800080;
+}
+
+.color-blind .green,
+.color-blind .customSuccess .green,
+.color-blind .highlight .green {
+  background-color: #FF00FF;
+} */
+
+/* .color-blind .green {
+  background-color: #FF00FF;
+} */
 
 .customDanger {
   background-color: #ED4337;

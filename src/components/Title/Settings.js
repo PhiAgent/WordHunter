@@ -56,7 +56,7 @@ const Settings = () => {
                   }
                   onClick={changeMode}></i>
             </div>
-              <div
+              {/* <div
                 className="toggleButtons ColorBlind"
               >
                 Color Blind Mode&nbsp;&nbsp;&nbsp;
@@ -71,7 +71,7 @@ const Settings = () => {
                   onClick={changeColorBlind}
                 >
                 </i>
-            </div>
+            </div> */}
           </div>
           <div className="modal-footer">
             <div>

@@ -22,7 +22,7 @@ const Leaderboard = () => {
             leaders.map((leader, i) =>
               <tr
                 key={`leader${i}`}
-                className={`${currentPlayer === leader.username ? "highlight green" : ""}`}
+                className={`${currentPlayer === leader.username ? "highlight" : ""}`}
               >
                 <td>
                   {leader.username}

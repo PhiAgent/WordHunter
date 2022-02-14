@@ -9,7 +9,7 @@ export const ContextProvider = ({children}) => {
 
   // States
   const [lightMode, setLightMode] = useLocalStorage('lightmode', false);
-  const [colorBlind, setColorBlind] = useLocalStorage('colorBlind', false);
+  // const [colorBlind, setColorBlind] = useLocalStorage('colorBlind', false);
   const [score, setScore] = useLocalStorage('score', 0);
   const [enteredWords, setEnteredWords] = useLocalStorage('enteredWords', []);
   const [currentEntry, setCurrentEntry] = useState('');
@@ -26,17 +26,17 @@ export const ContextProvider = ({children}) => {
     setLightMode(!lightMode);
   };
 
-  const changeColorBlind = () => {
-    document.body.classList[colorBlind ? 'remove' : 'add']('color-blind');
-    setColorBlind(!colorBlind);
-  };
+  // const changeColorBlind = () => {
+  //   document.body.classList[colorBlind ? 'remove' : 'add']('color-blind');
+  //   setColorBlind(!colorBlind);
+  // };
 
   return(
     <ThemeContext.Provider value={{
       lightMode,
       changeMode,
-      colorBlind,
-      changeColorBlind,
+      // colorBlind,
+      // changeColorBlind,
       setScore,
       score,
       enteredWords,

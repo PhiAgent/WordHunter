@@ -14,7 +14,7 @@ const ScoreBoard = () => {
           <div className="count">{enteredWords.length}
           </div>
       </div>
-      <div className="score green">
+      <div className={"score green"}>
         <small className="score-title">Score
         </small>
           <div className="count">{score}
