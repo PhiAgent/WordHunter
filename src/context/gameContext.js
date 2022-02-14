@@ -1,5 +1,6 @@
 
 import React, {useContext, useState, createContext} from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { getRandomWord, shuffle } from '../utils/helperFunctions';
 
 const ThemeContext = createContext();
@@ -7,13 +8,13 @@ const ThemeContext = createContext();
 export const ContextProvider = ({children}) => {
 
   // States
-  const [lightMode, setLightMode] = useState(true);
+  const [lightMode, setLightMode] = useLocalStorage(true);
   const [colorBlind, setColorBlind] = useState(false);
   const [score, setScore] = useState(0);
   const [enteredWords, setEnteredWords] = useState([]);
   const [currentEntry, setCurrentEntry] = useState('');
   const [leaders, setLeaders] = useState([]);
-  const [currentPlayer, setPlayer] = useState('');
+  const [currentPlayer, setPlayer] = useLocalStorage('currentPlayer', '');
   const [endStatus, setEndStatus] = useState(true);
   const [gameOver, setGameOver] = useState(false);
   const [unScrambled, setUnScrambled] = useState(getRandomWord());

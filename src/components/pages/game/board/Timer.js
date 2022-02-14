@@ -18,7 +18,8 @@ const Timer = ({
           leaders,
           setLeaders,
           currentPlayer,
-          setGameOver
+          setGameOver,
+          gameOver,
         } = useMode();
 
   useEffect(() => {
