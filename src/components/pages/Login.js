@@ -9,6 +9,7 @@ const Login = () => {
   const [input, setInput] = useState('');
   const [errors, setErrors] = useState('');
 
+  // Update Input form
   const handleChange = e => {
     setInput(e.target.value);
   }
@@ -43,8 +44,9 @@ const Login = () => {
   };
 
   //Set helper messages
-  const helperText = () => errors ? errors : `It does not have to be your email`
+  const helperText = () => errors ? errors : `It does not have to be your email`;
 
+  // Submits username
   const handleSubmit = e => {
     e.preventDefault();
     let noErrors = validate();

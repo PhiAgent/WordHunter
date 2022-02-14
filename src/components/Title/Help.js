@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useMode from '../../context/GameContext';
+import gif from '../../../dist/3b2457162d457a12d4832960782226b3.gif';
 
 const Help = () => {
   const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
@@ -26,6 +27,9 @@ const Help = () => {
               <li className="mb-2">The longer the word, the more points you get.</li>
               <li className="mb-2">Watch out, there's always a 9 letter word!</li>
           </ul>
+          <div >
+                <img src={gif} className='gif' alt="How to play" />
+          </div>
         </div>
         <div className="modal-footer">
           <div>

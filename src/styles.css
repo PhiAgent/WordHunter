@@ -71,6 +71,11 @@ body {
     transition: all .5s;
 }
 
+.gif {
+  width: 100%;
+  height: 100%;
+}
+
 .modal-header {
   display: flex;
   justify-content: space-between;
