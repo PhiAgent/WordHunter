@@ -78,12 +78,14 @@ const updateLeaders = (leaders, score, username) => {//It's important that leade
   }
 };
 
+// Checks if word is valid continuous tense
 const continousTense = (parentStr, str) => {
   const isContinuous = str.slice(-3) === 'ing';
 
   return isContinuous && (str.slice(0, -3) in candidates[parentStr]);
 }
 
+// Returns the top scoring 50 words of a letter set
 const findSolutionWords = str => {
   const words = [];
 
@@ -91,7 +93,9 @@ const findSolutionWords = str => {
     words.push(key);
   };
 
-  words.sort((str1, str2) => findScore(str1) > findScore(str2) ? -1 : 1);
+  words.sort(
+    (str1, str2) => findScore(str1) > findScore(str2) ? -1 : 1
+  );
 
   return words.slice(0, 50);
 }

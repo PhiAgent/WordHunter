@@ -74,7 +74,12 @@ const Login = () => {
                 value={input}
                 onChange={handleChange}
               />
-              <small id="usernameHelp" className={`form-text text-muted ${errors ? "errors" : ""}`}>{helperText()}</small>
+              <small
+                id="usernameHelp"
+                className={`form-text text-muted ${errors ? "errors" : ""
+                }`}>
+                  {helperText()}
+              </small>
             </div>
             <button type="submit" className="btn btn-primary" onSubmit={handleSubmit}>Enter</button>
           </div>

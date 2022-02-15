@@ -44,6 +44,7 @@ app.post('/leaders', (req, res) => {
               res.status(400) :
               res.status(200);
 
+  // Expensive API call so contingencies must be met beforehand
   word && username && score && updateScore(word, username, score, cb);
 });
 

@@ -51,13 +51,15 @@ const Timer = ({
       setGameOver(true);
     }
 
-    // Fetch highest scorers before game ends
+    // Fetch highest scorers 5s before gameover
     if(timeLeft === 5) {
       axios
         .get(
-          `${url}/leaders`, {
+          `${url}/leaders`,
+          {
           params: { 'word': unScrambled },
-        })
+          }
+        )
         .then(result =>
           setLeaders(result.data)
           // !gameOver && setLeaders(result.data);
