@@ -2,7 +2,12 @@ import React from 'react';
 import useMode from '../../context/GameContext';
 
 const Settings = () => {
-  const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
+  const {
+          lightMode,
+          changeMode,
+          // changeColorBlind,
+          // colorBlind
+          } = useMode();
 
   return (
     <div>

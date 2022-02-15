@@ -17,6 +17,7 @@ const addWords = dictionary => {
     words += `('${word}'),`
   };
   let query = `INSERT INTO words(word) VALUES ${words.slice(0, -1)}`;
+
   pool
     .connect()
     .then(client =>
@@ -37,6 +38,7 @@ const addWords = dictionary => {
   */
 const getLeaders = (word, cb) => {
   const query = 'SELECT username, score FROM leaderboard WHERE word = $1 LIMIT 10';
+
   pool
     .connect()
     .then(client =>
@@ -67,6 +69,7 @@ const getLeaders = (word, cb) => {
 // TODO: Handle db edit errors gracefully
 const updateScore = (word, username, newScore, cb) => {
   const query = 'SELECT username, score, word_id FROM leaderboard WHERE word = $1 LIMIT 10';
+
   pool
     .connect()
     .then(client =>
@@ -95,7 +98,7 @@ const updateScore = (word, username, newScore, cb) => {
                 })
                 .catch(err => {
                   client.release();
-                  cb(err);
+                  // TODO: Handle Error gracefully;
                 })
             } else {
               client.release();
@@ -117,7 +120,7 @@ const updateScore = (word, username, newScore, cb) => {
                 })
                 .catch(err => {
                   client.release();
-                  cb(err);
+                  // TODO: Handle Error gracefully;
                 })
             } else {
               if(newScore > ranking.at(-1).score){
@@ -134,7 +137,7 @@ const updateScore = (word, username, newScore, cb) => {
                   })
                   .catch(err => {
                     client.release();
-                    cb(err)
+                    // TODO: Handle Error gracefully;
                   })
               } else {
                 client.release();

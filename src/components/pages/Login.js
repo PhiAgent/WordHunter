@@ -76,7 +76,7 @@ const Login = () => {
               />
               <small id="usernameHelp" className={`form-text text-muted ${errors ? "errors" : ""}`}>{helperText()}</small>
             </div>
-            <button type="submit" className="btn btn-primary" onSubmit={handleSubmit}>Submit</button>
+            <button type="submit" className="btn btn-primary" onSubmit={handleSubmit}>Enter</button>
           </div>
         </form>
       </div>
