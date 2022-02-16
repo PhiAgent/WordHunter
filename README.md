@@ -166,4 +166,4 @@ Prince Addai [@PhiAgent](https://github.com/PhiAgent)|[LinkedIn](https://www.lin
 [stars-url]: https://github.com/Team-Spaghetti/FEC-Project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Team-Spaghetti/FEC-Project
 [issues-url]: https://github.com/Team-Spaghetti/FEC-Project/issues
-[product-screenshot]: dist/9a43e89cd9c4625358c3cf07455d3da2.gif
+[product-screenshot]: 9a43e89cd9c4625358c3cf07455d3da2.gif
