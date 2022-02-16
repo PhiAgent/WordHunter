@@ -158,12 +158,12 @@ Prince Addai [@PhiAgent](https://github.com/PhiAgent)|[LinkedIn](https://www.lin
 <!-- update links here -->
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Team-Spaghetti/FEC-Project
-[contributors-url]: https://github.com/Team-Spaghetti/FEC-Project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Team-Spaghetti/FEC-Project?style=social
-[forks-url]: https://github.com/Team-Spaghetti/FEC-Project/network/members
-[stars-shield]: https://img.shields.io/github/stars/Team-Spaghetti/FEC-Project?style=social
-[stars-url]: https://github.com/Team-Spaghetti/FEC-Project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Team-Spaghetti/FEC-Project
-[issues-url]: https://github.com/Team-Spaghetti/FEC-Project/issues
+[contributors-shield]: https://img.shields.io/github/contributors/PhiAgent/WordHunter?color=green
+[contributors-url]: https://github.com/PhiAgent/WordHunter/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/PhiAgent/WordHunter?style=social
+[forks-url]: https://github.com/PhiAgent/WordHunter/network/members
+[stars-shield]: https://img.shields.io/github/stars/PhiAgent/WordHunter?style=social
+[stars-url]: https://github.com/PhiAgent/WordHunter/stargazers
+[issues-shield]: https://img.shields.io/github/issues/PhiAgent/WordHunter
+[issues-url]: https://github.com/PhiAgent/WordHunter/issues
 [product-screenshot]: 9a43e89cd9c4625358c3cf07455d3da2.gif
