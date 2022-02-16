@@ -155,3 +155,5 @@ const updateScore = (word, username, newScore, cb) => {
 
 
 module.exports = {getLeaders, updateScore};
+
+// addWords(dictionary);

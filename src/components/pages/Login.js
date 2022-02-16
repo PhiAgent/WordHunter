@@ -19,23 +19,23 @@ const Login = () => {
     let noSpace = /^\S+$/g;
 
     if(input.length < 3) {//Too short
-      setErrors('Username must be at least 3 characters');
+      setErrors('Nickname must be at least 3 characters');
       return false;
 
     } else if (input.length > 20) {//Too Long
-      setErrors('Username must be at most 20 characters');
+      setErrors('Nickname must be at most 20 characters');
       return false;
 
     } else if (!(input[0].toUpperCase() in scoreSheet)) {//Does not start with letter
-      setErrors('Username must start with letter');
+      setErrors('Nickname must start with letter');
       return false;
 
     } else if (!username) {//Nothing entered
-      setErrors('Username must be be at least 3 characters');
+      setErrors('Nickname must be at least 3 characters');
       return false;
 
     } else if (!noSpace.test(input)) {//Has spaces
-      setErrors('Username must have no space');
+      setErrors('Nickname must have no space');
       return false;
     }
 
@@ -59,7 +59,7 @@ const Login = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="login">
         <form className="form-group" onSubmit={handleSubmit}>
           <div className="form-content">
