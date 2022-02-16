@@ -65,7 +65,7 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
 1. Clone the repo
 <!-- update link here -->
    ```sh
-   git clone https://github.com/HR-SDC-Sapphire/FEC-Project.git
+   git clone https://github.com/PhiAgent/WordHunter.git
    ```
 2. Install NPM packages
    ```sh
