@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useMode from '../../context/GameContext';
-import gif from '../../../dist/9a43e89cd9c4625358c3cf07455d3da2.gif';
+import gif from '../../../9a43e89cd9c4625358c3cf07455d3da2.gif';
 
 const Help = () => {
   const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();

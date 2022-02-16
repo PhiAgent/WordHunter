@@ -88,19 +88,20 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
     ```sh
    node database/psql/db.js
     ```
-6. Create a config.env file in server like so server/config.env and put your port information like so:
+6. Recomment the last line in database/psql/db.js.
+7. Create a config.env file in server like so server/config.env and put your port information like so:
     ```
    PORT=5000
    ```
-7. Run in your terminal:
+8. Run in your terminal:
     ```sh
    npm run build-dev
     ```
-8. Now start your server by running in your terminal:
+9. Now start your server by running in your terminal:
     ```sh
    npm start
     ```
-9. Open localhost http://localhost:5000/ in your browser
+10. Open localhost http://localhost:5000/ in your browser
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
