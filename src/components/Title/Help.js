@@ -34,7 +34,7 @@ const Help = () => {
         <div className="modal-footer">
           <div>
             <a
-              href=""
+              href="https://github.com/PhiAgent/WordHunter"
               target="_blank"
               rel="noreferrer"
             ><span>Open-source code</span>
