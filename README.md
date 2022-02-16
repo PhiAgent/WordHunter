@@ -89,7 +89,7 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
    node database/psql/db.js
     ```
 6. Create a config.env file in server like so server/config.env and put your port information like so:
-  ```env
+  ```
    PORT=5000
    ```
 7. Run in your terminal:
