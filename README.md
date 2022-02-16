@@ -166,4 +166,4 @@ Prince Addai [@PhiAgent](https://github.com/PhiAgent)|[LinkedIn](https://www.lin
 [stars-url]: https://github.com/PhiAgent/WordHunter/stargazers
 [issues-shield]: https://img.shields.io/github/issues/PhiAgent/WordHunter
 [issues-url]: https://github.com/PhiAgent/WordHunter/issues
-[product-screenshot]: 9a43e89cd9c4625358c3cf07455d3da2.gif
+[product-screenshot]: out.gif

@@ -19,7 +19,9 @@ const Leaderboard = () => {
         </thead>
         <tbody>
           {
-            leaders.map((leader, i) =>
+            leaders
+              .sort((leader1, leader2) => leader1.score > leader2.score ? -1 : 1)
+              .map((leader, i) =>
               <tr
                 key={`leader${i}`}
                 className={`${currentPlayer === leader.username ? "highlight" : ""}`}
