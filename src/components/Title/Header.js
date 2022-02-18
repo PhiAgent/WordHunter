@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import useMode from '../../context/GameContext';
+import React from 'react';
 import Help from './Help';
 import Settings from './Settings';
 
 const Header = () => {
-  const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
 
 
   return (
@@ -17,6 +15,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// color blind is for changing only green to
-// orange

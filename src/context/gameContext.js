@@ -3,6 +3,10 @@ import React, {useContext, useState, createContext} from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { getRandomWord, shuffle } from '../utils/helperFunctions';
 
+// TODO: Commented out color-blind states and
+// functions are ground-work for upcoming
+// color-blind support in this application
+
 const ThemeContext = createContext();
 
 export const ContextProvider = ({children}) => {

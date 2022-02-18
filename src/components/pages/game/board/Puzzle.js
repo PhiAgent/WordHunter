@@ -13,6 +13,7 @@ const timer = 30;
 
 const Puzzle = () => {
 
+  // Context
   const {
     score,
     setScore,
@@ -24,7 +25,6 @@ const Puzzle = () => {
     setGameOver,
     unScrambled,
     setUnScrambled,
-    // setEndStatus
   } = useMode();
 
   // States
@@ -41,26 +41,36 @@ const Puzzle = () => {
     let letters = currentEntry.toLowerCase();
 
     if(letters) {
+
+      // Already Entered Word
       if(enteredWords.includes(letters)) {
         //transitions of already entered
         setPopClass('customWarning');
         setMessage(`Already tried that`);
-      } else if ((letters in candidates[unScrambled]) || continousTense(unScrambled, letters)) {
+      }
+      // Valid Word
+       else if ((letters in candidates[unScrambled]) || continousTense(unScrambled, letters)) {
         let points = findScore(letters);
         setScore(score + points);
         setEnteredWords([letters, ...enteredWords]);
         setMessage(`Great Job! +${points}`);
         setPopClass('customSuccess green');
-      } else if(letters.length < 3) {
+      }
+      // Word Too Short
+      else if(letters.length < 3) {
         // transitions of tooShort
         setMessage('Too short');
         setPopClass('customDanger');
-      } else {
+      }
+      // Invalid Word
+      else {
         // transitions for invalid
         setMessage('Not valid');
         setPopClass('customDanger');
       }
     }
+
+    // Brief Display of Entered Word
     setInfoDisplay(true);
     const timer = setTimeout(
       () => {
@@ -68,6 +78,7 @@ const Puzzle = () => {
         setCurrentEntry('');
       }, 250
     );
+
     clearBoard(true);
   };
 

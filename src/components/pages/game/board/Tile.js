@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Tile = ({ letter, currentEntry, clear, clearBoard, setCurrentEntry  }) => {
+
   const [bgColor, setBgColor] = useState('white');
 
   useEffect(() => {
@@ -18,6 +19,7 @@ const Tile = ({ letter, currentEntry, clear, clearBoard, setCurrentEntry  }) => 
       setBgColor('#0275d8');
       setCurrentEntry(currentEntry + letter);
     }
+
     // Allow user to go back
     else if (bgColor === '#0275d8' && currentEntry.slice(-1) === letter) {
       setBgColor('white');

@@ -202,6 +202,10 @@ i.settings {
 .errors {
   color: red !important;
 }
+/*
+.dark small {
+  color: white !important;
+} */
 
 a:hover {
   text-decoration: none;

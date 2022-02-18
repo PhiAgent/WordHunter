@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useMode from '../../../context/GameContext';
 import { getRandomWord } from '../../../utils/helperFunctions';
 
@@ -8,8 +8,14 @@ const EndButtons = () => {
           setGameOver,
           setPlayer,
           setUnScrambled,
-          setEndStatus
+          setLeaders,
         } = useMode();
+
+  const newGame = () => {
+    setGameOver(false);
+    setUnScrambled(getRandomWord());
+    setLeaders([]);
+  }
 
   return (
     <div className='endButtons'>
@@ -20,8 +26,7 @@ const EndButtons = () => {
             className="btn btn-primary endGame"
           onClick={() => {
               setPlayer('');
-              setGameOver(false);
-              setUnScrambled(getRandomWord());
+              newGame();
             }
           }
           >
@@ -31,12 +36,7 @@ const EndButtons = () => {
         <div>
           <button
             className="btn btn-primary endGame"
-            onClick={() => {
-                setGameOver(false);
-                setUnScrambled(getRandomWord());
-                setEndStatus(true);
-              }
-            }
+            onClick={() => newGame()}
           >
             Play Again!
           </button>

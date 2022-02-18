@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useMode from '../../context/GameContext';
 import gif from '../../../out.gif';
 
 const Help = () => {
-  const { lightMode, changeMode, changeColorBlind, colorBlind } = useMode();
+  const { lightMode, changeMode} = useMode();
 
   return (
     <div>

@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import React from "react";
 import ScoreBoard from "../game/Scoreboard";
 import EndButtons from "./EndButtons";
-import SolutionWords from "./Solution";
 import EndedGame from "./EndsGame";
 
 

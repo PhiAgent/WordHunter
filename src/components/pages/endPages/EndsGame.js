@@ -5,10 +5,7 @@ import SolutionWords from "./Solution";
 
 const EndedGame = () => {
 
-  const {
-          // endStatus,
-          leaders
-        } = useMode();
+  const {leaders} = useMode();
   const [presentLeaders, setLeaders] = useState(false);
   const [words, setWords] = useState(true);
 
@@ -38,7 +35,6 @@ const EndedGame = () => {
               </button>
             </div>
             {
-              // (endStatus && leaders.length) ?
               leaders.length ?
               <div>
                 <button

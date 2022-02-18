@@ -7,6 +7,10 @@ import useMode from "./context/GameContext";
 import Game from "./components/pages/game/Game";
 import LastPage from "./components/pages/endPages/LastPage";
 
+// TODO: Commented out color-blind states and
+// functions are ground-work for upcoming
+// color-blind support in this application
+
 const App = () => {
 
   const {

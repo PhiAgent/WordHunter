@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import useMode from '../../../context/GameContext';
+import React from 'react';
 import Board from './board/Board';
 import ScoreBoard from './ScoreBoard';
 

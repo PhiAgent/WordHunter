@@ -25,12 +25,12 @@ app.use(express.static(path.join(__dirname, '../dist')));
 // Get the highest ranking users
 app.get('/leaders', (req, res) => {
   let word = req.query.word;
-  const cb = (err, leaders) =>
-              err ?
-              res.status(400).send(err) :
-              res.status(200).send(leaders);
+  const callback = (err, leaders) =>
+                    err ?
+                    res.status(400).send(err) :
+                    res.status(200).send(leaders);
 
-  word && getLeaders(word, cb);
+  word && getLeaders(word, callback);
 });
 
 // Update database with score
@@ -39,13 +39,13 @@ app.post('/leaders', (req, res) => {
       username = req.body.username,
       score = req.body.score;
 
-  const cb = (err, leaders) =>
-              err ?
-              res.status(400) :
-              res.status(200);
+  const callback = (err, leaders) =>
+                    err ?
+                    res.status(400) :
+                    res.status(200);
 
   // Expensive API call so contingencies must be met beforehand
-  word && username && score && updateScore(word, username, score, cb);
+  word && username && score && updateScore(word, username, score, callback);
 });
 
 

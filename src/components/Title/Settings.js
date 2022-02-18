@@ -1,6 +1,10 @@
 import React from 'react';
 import useMode from '../../context/GameContext';
 
+// TODO: Commented out color-blind states and
+// functions are ground-work for upcoming
+// color-blind support in this application
+
 const Settings = () => {
   const {
           lightMode,

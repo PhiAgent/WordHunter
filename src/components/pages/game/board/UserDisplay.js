@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import useMode from "../../../../context/GameContext";
 import WordResponse from "./WordResponse";
 

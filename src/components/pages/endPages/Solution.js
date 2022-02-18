@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useMode from '../../../context/GameContext';
 import { findSolutionWords } from '../../../utils/helperFunctions';
 import {findScore} from '../../../utils/scoreGenerator';
