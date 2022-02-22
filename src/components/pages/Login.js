@@ -17,6 +17,7 @@ const Login = () => {
   // Validates username
   const validate = () => {
     let noSpace = /^\S+$/g;
+    let noSpecial = /^[a-zA-Z0-9]+$/g;
 
     if(input.length < 3) {//Too short
       setErrors('Nickname must be at least 3 characters');
@@ -36,6 +37,9 @@ const Login = () => {
 
     } else if (!noSpace.test(input)) {//Has spaces
       setErrors('Nickname must have no space');
+      return false;
+    } else if (!noSpecial.test(input)) {//Has special Characters
+      setErrors('No special characters allowed');
       return false;
     }
 
