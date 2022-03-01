@@ -9,7 +9,7 @@ import Timer from './Timer';
 import axios from 'axios';
 import { useLocalStorage } from '../../../../hooks/useLocalStorage';
 
-const timer = 60;
+const timer = 120;
 
 const Puzzle = () => {
 
