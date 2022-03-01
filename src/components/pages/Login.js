@@ -38,7 +38,9 @@ const Login = () => {
     } else if (!noSpace.test(input)) {//Has spaces
       setErrors('Nickname must have no space');
       return false;
-    } else if (!noSpecial.test(input)) {//Has special Characters
+    }
+
+    else if (!noSpecial.test(input)) {//Has special Characters
       setErrors('No special characters allowed');
       return false;
     }
