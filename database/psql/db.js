@@ -14,7 +14,7 @@ const pool = new Pool(
    * @param {object} dictionary - document containing the words
    * @returns {void} - populates database in background. Returns nothing
   */
-const addWords = dictionary => {
+const addWords = () => {
   let words = '';
   for (let word in dictionary) {
     words += `('${word}'),`
@@ -157,6 +157,6 @@ const updateScore = (word, username, newScore, cb) => {
 };
 
 
-module.exports = {getLeaders, updateScore};
+module.exports = { getLeaders, updateScore, addWords};
 
-// addWords(dictionary);
+// addWords();
