@@ -1,8 +1,11 @@
 const {Pool} = require('pg');
 const connectionConfig = require('./config');
+const {deploymentConfig, proConfig} = require('./deploymentConfig');
 const dictionary = require('../../src/utils/dictionary');
 
-const pool = new Pool(connectionConfig);
+const pool = new Pool(
+  process.env.NODE_ENV === 'production' ? proConfig: connectionConfig
+);
 
 
 
