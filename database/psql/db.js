@@ -4,10 +4,8 @@ const {deploymentConfig, proConfig} = require('./deploymentConfig');
 const dictionary = require('../../src/utils/dictionary');
 
 const pool = new Pool(
-  process.env.NODE_ENV === 'production' ? proConfig: connectionConfig
+  process.env.NODE_ENV === 'production' ? deploymentConfig: connectionConfig
 );
-
-
 
 /**
    * Populates the words table
@@ -32,7 +30,7 @@ const addWords = () => {
         })
     )
 };
-// addWords(dictionary);
+addWords(dictionary);
 
 /**
    * Gets top-scoring players for particular set of letters
