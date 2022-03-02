@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -7,6 +8,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  plugins: [new CaseSensitivePathsPlugin({ debug: true })],
   module: {
     rules: [
       {
