@@ -48,6 +48,9 @@ app.post('/leaders', (req, res) => {
   word && username && score && updateScore(word, username, score, callback);
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
+})
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
 
