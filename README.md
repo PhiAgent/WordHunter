@@ -46,8 +46,8 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
 
 * [React.js](https://reactjs.org/)
 * [Bootstrap](https://getbootstrap.com/)
-* [Express](https://expressjs.com/)
-* [PostgreSQL](https://www.postgresql.org/)
+* [Express (Must have node installed)](https://expressjs.com/)
+* [PostgreSQL (Must have PostgreSQL installed)](https://www.postgresql.org/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -75,7 +75,7 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
   ```js
    module.exports = {
       host: "localhost",
-      user: "your name",
+      user: "yourUserNameInYourLocalPostgres",
       database: "word_game",
       password: "",
       port: 5432,
@@ -83,25 +83,38 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
       idleTimeoutMillis: 1,
     };
    ```
-4. Uncomment the last line in database/psql/db.js.
-5. Populate the database by navigating to the root folder in your application in your terminal and run:
+4. Create a config.js file in database/psql with your local psql connection details like this database/psql/config.js:
+  ```js
+   module.exports = {
+      host: "localhost",
+      user: "yourUserNameInYourDeploymentPostgres",
+      database: "word_game",
+      password: "",
+      port: 5432,
+      max: 30,
+      idleTimeoutMillis: 1,
+    };
+   ```
+5. From inside your local postgresql, execute WordHunter/database/psql/schema.sql file to setup the databases and tables
+6. Uncomment the last line in database/psql/db.js.
+7. Populate the database by navigating to the root folder in your application in your terminal and run:
     ```sh
    node database/psql/db.js
     ```
-6. Recomment the last line in database/psql/db.js.
-7. Create a config.env file in server like so server/config.env and put your port information like so:
+8. Recomment the last line in database/psql/db.js.
+9. Create a config.env file in server like so server/config.env and put your port information like so:
     ```
-   PORT=5000
+   PORT=8080
    ```
-8. Run in your terminal:
+10. Run in your terminal:
     ```sh
    npm run build-dev
     ```
-9. Now start your server by running in your terminal:
+11. Now start your server by running in your terminal:
     ```sh
    npm start
     ```
-10. Open localhost http://localhost:5000/ in your browser
+12. Open localhost http://localhost:5000/ in your browser
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
