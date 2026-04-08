@@ -24,13 +24,14 @@ const addWords = () => {
     .then(client =>
       client
         .query(query)
-        .then(complete => client.release())
-        .catch(err => {
-          client.release();
-        })
+        .finally(() => client.release())
     )
+    .catch(err => {
+      console.error("Error adding words:", err);
+      client.release();
+    })
 };
-addWords(dictionary);
+
 
 /**
    * Gets top-scoring players for particular set of letters
