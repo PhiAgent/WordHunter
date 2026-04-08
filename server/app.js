@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 // DATABASE
-const { getLeaders, updateScore } = require('../database/psql/db');
+const { getLeaders, updateScore } = require('../database/psql/h2Db');
 
 // MIDDLEWARE
 app.use(morgan('dev'));
@@ -34,19 +34,19 @@ app.get('/leaders', (req, res) => {
 });
 
 // Update database with score
-app.post('/leaders', (req, res) => {
-  let word = req.body.word,
-      username = req.body.username,
-      score = req.body.score;
+// app.post('/leaders', (req, res) => {
+//   let word = req.body.word,
+//       username = req.body.username,
+//       score = req.body.score;
 
-  const callback = (err, leaders) =>
-                    err ?
-                    res.status(400) :
-                    res.status(200);
+//   const callback = (err, leaders) =>
+//                     err ?
+//                     res.status(400) :
+//                     res.status(200);
 
-  // Expensive API call so contingencies must be met beforehand
-  word && username && score && updateScore(word, username, score, callback);
-});
+//   // Expensive API call so contingencies must be met beforehand
+//   word && username && score && updateScore(word, username, score, callback);
+// });
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/index.html"));

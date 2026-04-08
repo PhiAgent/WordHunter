@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS word_game;
+-- DROP DATABASE IF EXISTS word_game;
 
-CREATE DATABASE word_game;
+-- CREATE DATABASE word_game;
 
-\connect word_game;
+-- \connect word_game;
 
 CREATE TABLE words (
   id INTEGER GENERATED ALWAYS AS IDENTITY,

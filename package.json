@@ -17,7 +17,9 @@
     "start": "node server/app"
   },
   "dependencies": {
+    "body-parser": "^2.2.2",
     "file-loader": "^6.2.0",
+    "h2": "^0.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"
