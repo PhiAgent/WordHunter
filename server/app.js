@@ -50,7 +50,10 @@ app.post('/leaders', (req, res) => {
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/index.html"));
-})
+});
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
 
+// npm install -g serve
+// npm run build-prod
+// serve -s dist
