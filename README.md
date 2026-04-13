@@ -84,7 +84,7 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
     };
    ```
 4. Create a config.js file in database/psql with your local psql connection details like this database/psql/config.js:
-  ```js
+  ```
    module.exports = {
       host: "localhost",
       user: "yourUserNameInYourDeploymentPostgres",
@@ -98,7 +98,7 @@ Growing up, there was this game that I loved playing on my mum’s phone. Howeve
 5. From inside your local postgresql, execute WordHunter/database/psql/schema.sql file to setup the databases and tables
 6. Uncomment the last line in database/psql/db.js.
 7. Populate the database by navigating to the root folder in your application in your terminal and run:
-    ```sh
+    ```
    node database/psql/db.js
     ```
 8. Recomment the last line in database/psql/db.js.
