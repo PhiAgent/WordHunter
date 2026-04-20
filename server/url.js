@@ -1,1 +1,1 @@
-module.exports = 'http://localhost:5000'; /*process.env.NODE_ENV ='production' ? 'https://intelligentsia-games.herokuapp.com' : */
+module.exports = 'http://localhost:8081'; /*process.env.NODE_ENV ='production' ? 'https://intelligentsia-games.herokuapp.com' : */

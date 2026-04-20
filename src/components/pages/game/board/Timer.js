@@ -37,10 +37,12 @@ const Timer = ({
       if (newLeaderFound){
         setLeaders(leaderCopy);
         axios
-          .post(`${url}/leaders`, {
+          .post(`${url}/scores`, {
             word: unScrambled,
             username: currentPlayer,
-            score
+            score,
+            user_id: 1,
+            word_id: 1
           })
           .then(result => result.data)
           .catch(err => console.error(err));
@@ -55,7 +57,7 @@ const Timer = ({
     if(timeLeft === 5) {
       axios
         .get(
-          `${url}/leaders`,
+          `${url}/scores/topScorers`,
           {
           params: { 'word': unScrambled },
           }
