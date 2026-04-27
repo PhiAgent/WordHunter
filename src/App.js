@@ -1,7 +1,8 @@
 
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Login from "./components/pages/Login";
+import Login from "./components/pages/startPages/Login";
+import LandingPage from "./components/pages/startPages/Landing";
 import Header from "./components/Title/Header";
 import useMode from "./context/GameContext";
 import Game from "./components/pages/game/Game";
@@ -31,7 +32,7 @@ const App = () => {
   return (
     <div className="app">
       <Header/>
-      {!currentPlayer && <Login />}
+      {!currentPlayer && <LandingPage />}
       {currentPlayer && !gameOver && <Game/> }
       {currentPlayer && gameOver && <LastPage/>}
     </div>
