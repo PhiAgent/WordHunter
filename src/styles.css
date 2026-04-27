@@ -54,6 +54,11 @@ body {
   height: auto;
 }
 
+.helper-text {
+  margin: 0;
+  padding: 0;
+}
+
 .title {
   display: flex;
   justify-content: space-between;
@@ -142,6 +147,10 @@ h1 {
 .form-text {
   font-size: 0.7em;
   margin-top: 1px;
+}
+
+.country-subForm {
+  margin: 14px 0px 0px 0px;
 }
 
 .inputHelper {

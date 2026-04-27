@@ -1,63 +1,73 @@
 import React, { useState } from 'react';
+import ReactCountryDropdown from 'react-country-dropdown';
 import useMode from '../../context/GameContext';
 import {scoreSheet} from '../../utils/scoreGenerator';
+import {defaultCountry} from '../../utils/constants';
 
 const Login = () => {
 
-  const { setPlayer } = useMode();
+  const { setPlayer, setCountry, country } = useMode();
 
   const [input, setInput] = useState('');
-  const [errors, setErrors] = useState('');
+  const [usernameErrors, setUsernameErrors] = useState('');
+
+  const noSpace = /^\S+$/g;
+  const noSpecial = /^[a-zA-Z0-9]+$/g;
 
   // Update Input form
   const handleChange = e => {
     setInput(e.target.value);
   }
 
-  // Validates username
-  const validate = () => {
-    let noSpace = /^\S+$/g;
-    let noSpecial = /^[a-zA-Z0-9]+$/g;
+  // ValidateUsernames username
+  const validateUsername = () => {
 
     if(input.length < 3) {//Too short
-      setErrors('Nickname must be at least 3 characters');
+      setUsernameErrors('Nickname must be at least 3 characters');
       return false;
 
     } else if (input.length > 20) {//Too Long
-      setErrors('Nickname must be at most 20 characters');
+      setUsernameErrors('Nickname must be at most 20 characters');
       return false;
 
     } else if (!(input[0].toUpperCase() in scoreSheet)) {//Does not start with letter
-      setErrors('Nickname must start with letter');
+      setUsernameErrors('Nickname must start with letter');
       return false;
 
     } else if (!username) {//Nothing entered
-      setErrors('Nickname must be at least 3 characters');
+      setUsernameErrors('Nickname must be at least 3 characters');
       return false;
 
     } else if (!noSpace.test(input)) {//Has spaces
-      setErrors('Nickname must have no space');
+      setUsernameErrors('Nickname must have no space');
       return false;
     }
 
     else if (!noSpecial.test(input)) {//Has special Characters
-      setErrors('No special characters allowed');
+      setUsernameErrors('No special characters allowed');
       return false;
     }
 
-    setErrors('');
+    setUsernameErrors('');
     return true;
   };
 
   //Set helper messages
-  const helperText = () => errors ? errors : `It does not have to be your email`;
+  const helperTextUsername = () => usernameErrors ? usernameErrors : `It does not have to be your email`;
+  const helperTextCountry = () => `What country are you rooting for this world cup?`;
+
+  const handleCountryChange = country => {
+      setCountry(country.name);
+  }
 
   // Submits username
   const handleSubmit = e => {
     e.preventDefault();
-    let noErrors = validate();
+    let noUsernameErrors = validateUsername();
+    console.log("Country: "+ country);
 
-    if(noErrors) {
+
+    if(noUsernameErrors && country) {
       const player = input;
       setPlayer(player);
       setInput('');
@@ -80,12 +90,21 @@ const Login = () => {
                 value={input}
                 onChange={handleChange}
               />
-              <small
-                id="usernameHelp"
-                className={`form-text text-muted ${errors ? "errors" : ""
+              <div
+                className={`form-text helper-text text-muted ${usernameErrors ? "errors" : ""
                 }`}>
-                  {helperText()}
-              </small>
+                  {helperTextUsername()}
+              </div>
+            </div>
+            <div className="inputHelper country-subForm">
+                <ReactCountryDropdown
+                defaultCountry='GH'
+                onSelect={handleCountryChange}
+                />
+                <div
+                className={`form-text text-muted helper-text`}>
+                  {helperTextCountry()}
+                </div>
             </div>
             <button type="submit" className="btn btn-primary" onSubmit={handleSubmit}>Enter</button>
           </div>

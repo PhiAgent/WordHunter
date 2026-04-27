@@ -9,7 +9,7 @@ import Timer from './Timer';
 import axios from 'axios';
 import { useLocalStorage } from '../../../../hooks/useLocalStorage';
 
-const timer = 120;
+const timer = 60;
 
 const Puzzle = () => {
 
@@ -108,8 +108,9 @@ const Puzzle = () => {
       >
         <div></div>
       <button
+        type="submit"
         className="btn btn-primary submit"
-        onClick={checkWord}
+        onSubmit={checkWord}
       >
         Submit
       </button>
