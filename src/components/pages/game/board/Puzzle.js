@@ -6,10 +6,11 @@ import candidates from '../../../../utils/dictionary';
 import useMode from '../../../../context/GameContext';
 import UserDisplay from './UserDisplay';
 import Timer from './Timer';
+// import timer from '../../../../utils/constants';
 import axios from 'axios';
 import { useLocalStorage } from '../../../../hooks/useLocalStorage';
 
-const timer = 60;
+const timer = 30;
 
 const Puzzle = () => {
 
@@ -110,7 +111,7 @@ const Puzzle = () => {
       <button
         type="submit"
         className="btn btn-primary submit"
-        onSubmit={checkWord}
+        onClick={checkWord}
       >
         Submit
       </button>

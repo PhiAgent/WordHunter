@@ -1,4 +1,4 @@
 const defaultCountry = "Ghana";
-const timer = 120;
+const timer = 30;
 
 module.exports = { defaultCountry, timer};

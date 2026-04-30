@@ -34,9 +34,10 @@ const Timer = ({
 
     } else if (timeLeft === 0) {
       let leaderCopy = JSON.parse(JSON.stringify(leaders));
-      let newLeaderFound = updateLeaders(leaderCopy, score, currentPlayer);
-      if (newLeaderFound){
-        setLeaders(leaderCopy);
+      let newLeaderFound = updateLeaders(leaderCopy, score, currentPlayer, country);
+      if(!score) console.log(leaderCopy);
+      setLeaders(leaderCopy);
+      if (newLeaderFound && score){//score must be greater than 0 to persist to db
         axios
           .post(`${url}/scores`, {
             word: unScrambled,
@@ -62,8 +63,10 @@ const Timer = ({
           params: { 'word': unScrambled },
           }
         )
-        .then(result =>
-          setLeaders(result.data)
+        .then(result =>{
+          setLeaders(result.data);
+          console.log(leaders);
+        }
           // !gameOver && setLeaders(result.data);
         )
         .catch(err => console.error(err));

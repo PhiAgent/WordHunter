@@ -12,6 +12,10 @@ const Leaderboard = () => {
           <tr>
             <th scope="col">Player</th>
             <th scope="col">
+              <div className='col2'>Country
+              </div>
+            </th>
+            <th scope="col">
               <div className='col2'>Score
               </div>
             </th>
@@ -30,6 +34,11 @@ const Leaderboard = () => {
                   {leader.username}
                 </td>
                 <td scope="col">
+                  <div className={`col2`}>
+                    <span>{leader.country}
+                    </span>
+                  </div>
+                </td><td scope="col">
                   <div className={`col2`}>
                     <span>{leader.score}
                     </span>

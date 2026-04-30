@@ -40,8 +40,8 @@ const secondsToMinutes = seconds => {
 }
 
 // Checks if user has made it into top 10
-const updateLeaders = (leaders, score, username) => {//It's important that leaders are sorted by score
-  if(!score) return false;
+const updateLeaders = (leaders, score, username, country) => {//It's important that leaders are sorted by score
+  // if(!score) return false;
 
   let oldScore, userIndex;
   const userIsLeader = leaders.some((leader, i) => {
@@ -62,7 +62,7 @@ const updateLeaders = (leaders, score, username) => {//It's important that leade
     }
   } else {
     if (leaders.length < 10) {//add user
-      leaders.push({ username, score });
+      leaders.push({ username, score, country });
       return true;
     } else {
       const lowestScore = leaders[leaders.length - 1]['score'];

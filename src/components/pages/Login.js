@@ -64,7 +64,6 @@ const Login = () => {
   const handleSubmit = e => {
     e.preventDefault();
     let noUsernameErrors = validateUsername();
-    console.log("Country: "+ country);
 
 
     if(noUsernameErrors && country) {
