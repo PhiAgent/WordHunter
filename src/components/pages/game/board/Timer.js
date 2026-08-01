@@ -37,16 +37,21 @@ const Timer = ({
       if (newLeaderFound){
         setLeaders(leaderCopy);
         axios
-          .post(`${url}/scores/addScores`, {
+          .post(`${url}/scores`, {
             word: unScrambled,
             username: currentPlayer,
             score,
-            user_id: 1,
-            word_id: 1,
+            // user_id: 1,
+            // word_id: 1,
             user_country: "Ghana"
           })
           .then(result => result.data)
-          .catch(err => console.error(err));
+          .catch(err => {
+        console.log("ERROR:", err);
+        console.log("STATUS:", err.response?.status);
+        console.log("RESPONSE:", err.response?.data);
+        console.log("REQUEST:", err.request);
+    });
       }
       setGameOver(true);
       clearTimeout(timeOut);
